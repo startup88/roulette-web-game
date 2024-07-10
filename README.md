@@ -1,10 +1,37 @@
-# Javascript Roulette
-Fully functioning roulette game made in Javascript and CSS
+# Roulette-React-Game
 
-Simply open index.html in your browser and play.
+![Logo](public/resources/shic_logo2.png)
 
-You can edit the files as you wish and use it for any project (commercial or private), some form of attribution would be appreciated, it doesn't have to be a link directly on the page; you could just leave in the author meta tag in the index file and add yourself to it if you make any changes.
+### Overview
 
-Enjoy.
+This Roulette Game is a part of "Project #3: Casino-S.H.I.C" for University of Arizona Coding Bootcamp.
+This was my personal assignement, and this is a stand alone version.
 
-![roulette](https://user-images.githubusercontent.com/95859352/151274580-ca557cac-3c14-4117-ade0-88735f3eeea0.png)
+
+![Screenshot](public/resources/screen.jpg)
+
+Complete project can be found at:
+
+[Github repository](https://github.com/cchitla/casino-shic)
+
+[Heroku deployed demo](https://casino-shic.herokuapp.com/)
+
+### Technologies used
+
+* JavaScript / HTML5 / CSS3
+* NodeJS
+* ReactJS
+* Bootstrap / React Bootstrap
+
+---
+
+[Project Demo](https://malinkamell.github.io/Roulette-Game-React/)
+
+---
+
+**Optimized for 1920x1080 screen resolution and Google Chrome Version 79**
+
+_Made for University of Arizona Coding Bootcamp, Week 22-24, January-February 2020_
+
+
+
