@@ -483,86 +483,12 @@ class App extends React.Component {
     return (
       <>
         <div className="main">
-          <div className="content"></div>
+          <div className="content">
+
+          <div className="info"></div>
           <div className="table"></div>
           <div className="control"></div>
-          <Row className="justify-items-center pt-2">
-            <Container fluid className="table">
-              <Row>
-                <Col className="mx-5">
-                  <RouletteTable
-                    //ROWS//
-                    firstRow={this.state.firstRow}
-                    firstBorder={this.state.firstBorder}
-                    secondRow={this.state.secondRow}
-                    secondBorder={this.state.secondBorder}
-                    thirdRow={this.state.thirdRow}
-                    thirdBorder={this.state.thirdBorder}
-                    fourthRow={this.state.fourthRow}
-                    fifthRow={this.state.fifthRow}
-                    columnLeft={this.state.columnLeft}
-                    columnRight={this.state.columnRight}
-                    //END ROWS//
-                    updateRow={this.updateRow}
-                    updateArr={this.updateArr}
-                    updateCoins={this.updateCoins}
-                    num={this.state.num}
-                    arr={this.state.arr}
-                    count={this.state.count}
-                    coins={this.state.coins}
-                    chip={this.state.chip}
-                    spinning={this.state.spinning}
-                  />
-                  <Row className="bg-red bg-verdict align-items-center">
-                    <Col
-                      md={4}
-                      className="d-flex align-items-center coins-col justify-content-center"
-                    >
-                      <h4 className="m-0">${this.state.coins}</h4>
-                    </Col>
-                    <Col md={8}>
-                      <div className="text-center">
-                        <h6 className="text-uppercase">{this.state.message}</h6>
-                      </div>
-                      <div className="text-center">
-                        {/* <h6>Your bets: <span>{this.state.arr.join(", ")}</span></h6> */}
-                        <div className="divider-line divider-line-center divider-line-linear-gradient w-100 mx-auto my-4">
-                          <GiDiamonds className="diamond-line-icon" />
-                        </div>
-                        <ul className="list-inline">
-                          <li className="list-inline-item">
-                            Spins: {this.state.count}
-                          </li>
-                          <li className="list-inline-item">
-                            Wins: {this.state.wins}
-                          </li>
-                          <li className="list-inline-item">
-                            Losses: {this.state.losses}
-                          </li>
-                        </ul>
-                      </div>
-                    </Col>
-                  </Row>
-                </Col>
-                <Col className="align-self-center">
-                  <Weel
-                    isSpinning={this.isSpinning}
-                    updateNum={this.updateNum}
-                    num={this.state.num}
-                    arr={this.state.arr}
-                    count={this.state.count}
-                  />
-                </Col>
-              </Row>
-            </Container>
-            <Container fluid className="table">
-              <Row>
-                <Col className="text-light-gold">
-                  Your bets: {this.state.arr.join(", ")}
-                </Col>
-              </Row>
-            </Container>
-          </Row>
+          </div>
         </div>
         <Footer />
       </>
