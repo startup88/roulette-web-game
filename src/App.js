@@ -482,7 +482,10 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Container className="main">
+        <div className="main">
+          <div className="content"></div>
+          <div className="table"></div>
+          <div className="control"></div>
           <Row className="justify-items-center pt-2">
             <Container fluid className="table">
               <Row>
@@ -560,7 +563,7 @@ class App extends React.Component {
               </Row>
             </Container>
           </Row>
-        </Container>
+        </div>
         <Footer />
       </>
     );
