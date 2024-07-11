@@ -17,7 +17,6 @@ import fifthRow from './components/table/rows/FifthRow.json';
 import columnLeft from './components/table/rows/ColumnLeft.json';
 import columnRight from './components/table/rows/ColumnRight.json';
 
-
 class App extends React.Component {
 
   state = {
@@ -301,9 +300,9 @@ class App extends React.Component {
               Your bets: {this.state.arr.join(", ")}
               </Col>
             </Row>
-            
           </Container>
         </Row>
+
       </Container>
     )
   }
