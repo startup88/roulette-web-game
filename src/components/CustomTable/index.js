@@ -19,6 +19,7 @@ import {
 import "./styles.css";
 const CustomTable = () => {
   const [numStates, setNumStates] = useState([]);
+  const [selectedNums, setSelectedNums] = useState([]);
 
   return (
     <div className="betTable">
@@ -30,7 +31,9 @@ const CustomTable = () => {
               rowSpan={3}
               style={{ alignContent: "center", padding: 0 }}
             >
-              <div>2</div>
+              <div>
+                2<div className="betTable-chip">4</div>
+              </div>
               <div>22</div>
             </td>
             {BET_TABLE.firstRow.map((one) => (
