@@ -5,19 +5,22 @@
   justify-content: center;
 }
 
-.betTable table tbody tr td {
+.betTable td {
   width: 6.25vw;
-  height: 6.25vw;
+  /* height: 6.25vw; */
   background-color: transparent;
   border: 1px solid white;
 
   align-content: center;
   text-align: center;
   font-weight: 700;
+
+  background-size: 100% 100%;
+  aspect-ratio: 1/1;
 }
 
 .betTable table {
-  width: "95%";
+  width: 95%;
   border: none;
   /* width: 6.25vw;
   height: 6.25vw; */
@@ -27,6 +30,8 @@
   /* background-position: -7px -523px; */
   color: white;
   font-size: 2.5rem;
+
+  aspect-ratio: 14/5;
 }
 
 .betTable-zeros {
@@ -38,22 +43,41 @@
   align-items: center;
   border-bottom: 1px solid white;
 }
+.betTable-zeros > div:hover {
+  background: url(../../assets/images/zero_hover.png) no-repeat center;
+  background-size: 100% 100%;
+}
+
 .hidden-td {
   border: none !important;
   visibility: hidden;
 }
 .td-red {
   background: url(../../assets/images/red.png) no-repeat center;
+  background-size: 100% 100%;
 }
-.td-red:hover {
+.td-red:hover,
+.td-red.hover {
   background: url(../../assets/images/red_hover.png) no-repeat center;
+  background-size: 100% 100%;
 }
 .td-black {
   background: url(../../assets/images/black.png) no-repeat center;
+  background-size: 100% 100%;
 }
-.td-black:hover {
+.td-black:hover,
+.td-black.hover {
   background: url(../../assets/images/black_hover.png) no-repeat center;
+  background-size: 100% 100%;
 }
 .td-row {
   font-size: 1.3rem;
+}
+.betTable-black-diamond {
+  background: url(../../assets/images/black_diamond.png) no-repeat center;
+  background-size: 80% 80% !important;
+}
+.betTable-red-diamond {
+  background: url(../../assets/images/red_diamond.png) no-repeat center;
+  background-size: 80% 80% !important;
 }
