@@ -19,7 +19,22 @@ import {
 import "./styles.css";
 const CustomTable = () => {
   const [numStates, setNumStates] = useState([]);
-  const [selectedNums, setSelectedNums] = useState([]);
+  const [betPlaceData, setBetPlaceData] = useState([]);
+
+  const betUnit = 1;
+
+  const displayTableTd = (type, numStr) => {
+    if (betPlaceData && betPlaceData.length) {
+      return betPlaceData
+        .filter((one) => one[0] === type && one[1] === numStr)
+        .reduce((total, one) => total + one[2], 0);
+    }
+    return 0;
+  };
+
+  const placeBets = (type, numStr, amount) => {
+    setBetPlaceData([...betPlaceData, [type, numStr, amount]]);
+  };
 
   return (
     <div className="betTable">
@@ -31,10 +46,34 @@ const CustomTable = () => {
               rowSpan={3}
               style={{ alignContent: "center", padding: 0 }}
             >
-              <div>
-                2<div className="betTable-chip">4</div>
-              </div>
-              <div>22</div>
+              {displayTableTd("single", `00`) ? (
+                <div>
+                  <div className="betTable-chip">
+                    {displayTableTd("single", `00`)}
+                  </div>
+                </div>
+              ) : (
+                <div
+                  className="betTable-header"
+                  onClick={() => placeBets("single", "00", betUnit)}
+                >
+                  00
+                </div>
+              )}
+              {displayTableTd("single", `0`) ? (
+                <div>
+                  <div className="betTable-chip">
+                    {displayTableTd("single", `0`)}
+                  </div>
+                </div>
+              ) : (
+                <div
+                  className="betTable-header"
+                  onClick={() => placeBets("single", "0", betUnit)}
+                >
+                  0
+                </div>
+              )}
             </td>
             {BET_TABLE.firstRow.map((one) => (
               <td
@@ -43,7 +82,20 @@ const CustomTable = () => {
                   numStates.includes(one.label) && "hover"
                 } `}
               >
-                {one.label}
+                {displayTableTd("single", one.label) ? (
+                  <div>
+                    <div className="betTable-chip">
+                      {displayTableTd("single", one.label)}
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className="betTable-header"
+                    onClick={() => placeBets("single", one.label, betUnit)}
+                  >
+                    {one.label}
+                  </div>
+                )}
               </td>
             ))}
             <td
@@ -66,7 +118,20 @@ const CustomTable = () => {
                   numStates.includes(one.label) && "hover"
                 }`}
               >
-                {one.label}
+                {displayTableTd("single", one.label) ? (
+                  <div>
+                    <div className="betTable-chip">
+                      {displayTableTd("single", one.label)}
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className="betTable-header"
+                    onClick={() => placeBets("single", one.label, betUnit)}
+                  >
+                    {one.label}
+                  </div>
+                )}
               </td>
             ))}
             <td
@@ -89,7 +154,20 @@ const CustomTable = () => {
                   numStates.includes(one.label) && "hover"
                 }`}
               >
-                {one.label}
+                {displayTableTd("single", one.label) ? (
+                  <div>
+                    <div className="betTable-chip">
+                      {displayTableTd("single", one.label)}
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className="betTable-header"
+                    onClick={() => placeBets("single", one.label, betUnit)}
+                  >
+                    {one.label}
+                  </div>
+                )}
               </td>
             ))}
             <td
