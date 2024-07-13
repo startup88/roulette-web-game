@@ -1,0 +1,25 @@
+.box-content{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+.bet-box{
+    margin-right: 20px ;
+    width: 7%;
+    text-align: center  ;
+    background-image: url('/preset2.png');
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.preset-content{
+    color: white;
+    font-weight: bold;
+    background-image: url('/inputfield.png');
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.box-content{
+    color: black;
+}

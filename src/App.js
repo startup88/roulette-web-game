@@ -18,6 +18,8 @@ import columnLeft from "./components/table/rows/ColumnLeft.json";
 import columnRight from "./components/table/rows/ColumnRight.json";
 import Footer from "./components/Footer";
 import TableComponent from "./components/CustomTable";
+import Info from "./components/infos";
+import Controls from "./components/control";
 
 class App extends React.Component {
   state = {
@@ -485,11 +487,15 @@ class App extends React.Component {
       <>
         <div className="main">
           <div className="content">
-            <div className="info"></div>
+            <div className="info">
+              <Info />
+            </div>
             <div className="table">
               <TableComponent />
             </div>
-            <div className="control"></div>
+            <div className="control">
+              <Controls />
+            </div>
           </div>
         </div>
         <Footer />
