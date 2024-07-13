@@ -23,7 +23,7 @@ const RouteltteField = (props) => {
         >
           {title}
         </div>
-        <div className="content">
+        <div className="info-content">
           <div className="value">
             <span className="unit">{unit}</span>
             <div
