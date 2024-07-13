@@ -1,0 +1,25 @@
+.bet-info{
+    display: flex;
+    padding: 10px;
+}
+.main-content{
+    display: flex;
+}
+
+.numbers-info{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.latest-numbers{
+    width: 40%;
+}
+.hot-cold-numbers{
+    width: 40%;
+}
+.progress-info{
+    display: flex;
+}
+.progress-box{
+    width: 100%;
+}

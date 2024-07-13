@@ -1,0 +1,13 @@
+.input-content{
+    background-image: url('/bet.png');
+    background-size: 100% 150%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.main-input{
+    color: white;
+    font-weight: bold;
+}
+.input-field:focus{
+    outline: none;
+}

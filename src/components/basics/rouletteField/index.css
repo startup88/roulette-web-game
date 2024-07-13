@@ -1,11 +1,32 @@
 .contain{
     border-radius: 10px;
     color: white;
-    background-color: #131313;
-    padding: 10px;
+    padding: 8px;
+    background-image: url('/inputfield.png');
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.contain-latest{
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    background-image: url('/latestback.png');
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.contain-hot-cold{
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    background-image: url('/hotcold.png');
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .main-field{
-    background-color: #252525;
+    /* background-color: #252525; */
     border-radius: 10px;
     padding: 10px;
 }
@@ -13,7 +34,31 @@
     font-weight: bold;
 }
 .value{
-    background: linear-gradient(#040404, #1e1e1e);
+    /* background: linear-gradient(#040404, #1e1e1e); */
     display: flex;
     border-radius: 10px;
+}
+.unit{
+    width: 25%;
+}
+.bet-title{
+    position: relative;
+    top: -15px;
+}
+.number{
+    background-image: url();
+}
+.flex{
+    display: flex;
+    padding: 10px;
+}
+.number-box{
+    background: linear-gradient(to bottom,  #d6d6d6 40%, #8f8f8f);
+    border-radius: 2px;
+    margin-right: 7px;
+    width: 100%;
+    text-align: center;
+}
+.content-center{
+    justify-content: center;
 }
