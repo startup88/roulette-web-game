@@ -1,64 +1,85 @@
-.contain{
-    border-radius: 10px;
-    color: white;
-    padding: 8px;
-    background-image: url('/inputfield.png');
-    background-size: 100% 110%;
-    background-repeat: no-repeat;
-    background-position: center;
+.contain {
+  border-radius: 10px;
+  color: white;
+  background-image: url("/inputfield.png");
+  background-size: 100% 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: calc(0.075 * (100vh - 30px));
 }
-.contain-latest{
-    border-radius: 10px;
-    color: white;
-    padding: 8px;
-    background-image: url('/latestback.png');
-    background-size: 100% 110%;
-    background-repeat: no-repeat;
-    background-position: center;
+.contain-latest {
+  border-radius: 10px;
+  color: white;
+  padding: 8px;
+  background-image: url("/latestback.png");
+  background-size: 100% 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: calc(0.075 * (100vh - 30px));
 }
-.contain-hot-cold{
-    border-radius: 10px;
-    color: white;
-    padding: 8px;
-    background-image: url('/hotcold.png');
-    background-size: 100% 110%;
-    background-repeat: no-repeat;
-    background-position: center;
+.contain-hot-cold {
+  border-radius: 10px;
+  color: white;
+  padding: 3px;
+  background-image: url("/hotcold.png");
+  background-size: 100% 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: calc(0.075 * (100vh - 30px));
 }
-.main-field{
-    /* background-color: #252525; */
-    border-radius: 10px;
-    padding: 10px;
+
+.main-field {
+  /* background-color: #252525; */
+  border-radius: 10px;
+  padding: 10px;
 }
-.info{
-    font-weight: bold;
+
+.contain-hot-cold .main-field {
+  padding: 0px;
 }
-.value{
-    /* background: linear-gradient(#040404, #1e1e1e); */
-    display: flex;
-    border-radius: 10px;
+
+.info {
+  font-weight: bold;
 }
-.unit{
-    width: 25%;
+.value {
+  /* background: linear-gradient(#040404, #1e1e1e); */
+  display: flex;
+  border-radius: 10px;
 }
-.bet-title{
-    position: relative;
-    top: -15px;
+.unit {
+  width: 25%;
+  text-align: center;
+  color: grey;
 }
-.number{
-    background-image: url();
+.contain .bet-title {
+  position: relative;
+  top: -10px;
 }
-.flex{
-    display: flex;
-    padding: 10px;
+.contain-latest .bet-title {
+  position: relative;
+  top: -15px;
 }
-.number-box{
-    background: linear-gradient(to bottom,  #d6d6d6 40%, #8f8f8f);
-    border-radius: 2px;
-    margin-right: 7px;
-    width: 100%;
-    text-align: center;
+.number {
+  background-image: url();
 }
-.content-center{
-    justify-content: center;
+.flex {
+  display: flex;
+  padding: 10px;
+}
+.number-box {
+  background: linear-gradient(to bottom, #d6d6d6 40%, #8f8f8f);
+  border-radius: 2px;
+  margin-right: 7px;
+  width: 100%;
+  text-align: center;
+}
+.content-center {
+  justify-content: center;
+}
+
+.numbers-info .latest-numbers {
+  margin-right: 1vw;
 }

@@ -1,25 +1,29 @@
-.bet-info{
-    display: flex;
-    padding: 10px;
+.bet-info {
+  display: flex;
+  padding: 10px;
 }
-.main-content{
-    display: flex;
+.main-content {
+  display: flex;
 }
 
-.numbers-info{
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+.numbers-info {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
-.latest-numbers{
-    width: 40%;
+.latest-numbers {
+  width: 40%;
 }
-.hot-cold-numbers{
-    width: 40%;
+.hot-cold-numbers {
+  width: 40%;
 }
-.progress-info{
-    display: flex;
+.progress-info {
+  display: flex;
+  justify-content: space-between;
 }
-.progress-box{
-    width: 100%;
+.progress-info .progress-box {
+  margin-left: 0.5vw;
+}
+.progress-box {
+  width: 100%;
 }

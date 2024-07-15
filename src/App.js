@@ -486,15 +486,18 @@ class App extends React.Component {
     return (
       <>
         <div className="main">
-          <div className="content">
-            <div className="info">
-              <Info />
-            </div>
-            <div className="table">
-              <TableComponent />
-            </div>
-            <div className="control">
-              <Controls />
+          <div className="board">
+            <div className="content">
+              <div className="info">
+                <Info />
+              </div>
+              <div className="table">
+                <TableComponent />
+              </div>
+
+              <div className="control">
+                <Controls />
+              </div>
             </div>
           </div>
         </div>
