@@ -1,7 +1,10 @@
 import React from "react";
-import RouteltteField from "../basics/rouletteField";
-import "./index.css";
 import { Container, Row, Col, Image } from "react-bootstrap";
+
+import RouteltteField from "../basics/rouletteField";
+import InputField from "../basics/InputField";
+
+import "./index.css";
 
 const Info = () => {
   return (
@@ -26,16 +29,10 @@ const Info = () => {
           <Col sm="7">
             <div className="numbers-info">
               <div className="latest-numbers">
-                <RouteltteField
-                  title="LATEST NUMBERS"
-                  numberInfo="1"
-                />
+                <RouteltteField title="LATEST NUMBERS" numberInfo="1" />
               </div>
               <div className="hot-cold-numbers">
-                <RouteltteField
-                  title="HOT AND COLD NUMBERS"
-                  numberInfo="2"
-                />
+                <RouteltteField title="HOT AND COLD NUMBERS" numberInfo="2" />
               </div>
               <div></div>
             </div>
@@ -47,11 +44,14 @@ const Info = () => {
                 <RouteltteField title="ODD|EVEN" numberInfo="2" />
               </div>
               <div className="progress-box">
+                <InputField />
+              </div>
+              {/* <div className="progress-box">
                 <RouteltteField title="DOZENS |1|2|3" numberInfo="2" />
               </div>
               <div className="progress-box">
                 <RouteltteField title="COLUMNS |1|2|3" numberInfo="2" />
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>

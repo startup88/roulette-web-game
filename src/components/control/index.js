@@ -1,5 +1,4 @@
 import React from "react";
-import InputField from "../basics/InputField";
 import PresetBet from "../basics/PresetBets";
 import "./index.css";
 import { Container, Row, Col, Image } from "react-bootstrap";
@@ -9,16 +8,12 @@ const Controls = () => {
     <>
       <div className="controls-content">
         <Row style={{ width: "100%" }}>
-          <Col sm="3">
-            <div className="control-box1">
-              <InputField />
-            </div>
-          </Col>
-          <Col sm="4">
+          <Col sm="5">
             <div className="control-box">
               <PresetBet />
             </div>
           </Col>
+          <Col sm="2"></Col>
           <Col sm="5">
             <div className="button-control-box">
               <button className="control-button control-clear">
@@ -32,10 +27,10 @@ const Controls = () => {
               </button>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <button className="button-spin control-auto button-auto-radius">
-                    <p className="auto-spin">AUTO SPIN</p>
+                  <p className="auto-spin">AUTO SPIN</p>
                 </button>
                 <button className="button-spin control-spin button-spin-radius">
-                    <span>SPIN</span>
+                  <span>SPIN</span>
                 </button>
               </div>
             </div>
