@@ -14,11 +14,11 @@ const InputField = () => {
               justifyContent: "center",
             }}
           >
-            BET
+            WHEEL NUMBER
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <input
-              type="text"
+              type="number"
               className="input-field"
               style={{
                 backgroundColor: "transparent",

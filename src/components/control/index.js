@@ -8,12 +8,13 @@ const Controls = () => {
     <>
       <div className="controls-content">
         <Row style={{ width: "100%" }}>
-          <Col sm="5">
+          <Col sm="1"></Col>
+          <Col sm="5" style={{ alignContent: "center" }}>
             <div className="control-box">
               <PresetBet />
             </div>
           </Col>
-          <Col sm="2"></Col>
+          <Col sm="1"></Col>
           <Col sm="5">
             <div className="button-control-box">
               <button className="control-button control-clear">
