@@ -18,3 +18,24 @@ code {
   flex-direction: column;
   min-height: 100vh;
 }
+
+@media (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media (min-width: 1025px) {
+  html {
+    font-size: 16 px;
+  }
+}
+@media (min-width: 1440px) {
+  html {
+    font-size: 24px;
+  }
+}
