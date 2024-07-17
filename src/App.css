@@ -48,3 +48,13 @@ footer {
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom left;
 }
+
+@media (max-width: 780px) {
+  .table{
+    transform: rotate(90deg);
+    scale: 0.65 0.7;
+  }
+  .content{
+    scale: 0.75 1;
+  }
+}

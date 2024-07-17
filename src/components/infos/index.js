@@ -11,22 +11,22 @@ const Info = () => {
     <>
       <div className="main-content">
         <Row style={{ width: "100%" }}>
-          <Col sm="5">
+          <Col sm="5" className="info-left-values">
             <div className="bet-info">
               <Row style={{ width: "100%" }}>
-                <Col xs="4">
+                <Col xs="4" sm="4">
                   <RouteltteField title="TOTAL BET" unit="€" value="11" />
                 </Col>
-                <Col xs="4">
+                <Col xs="4" sm="4">
                   <RouteltteField title="CASH" unit="€" value="1000000" />
                 </Col>
-                <Col xs="4">
+                <Col xs="4" sm="4">
                   <RouteltteField title="WIN" unit="€" value="0" />
                 </Col>
               </Row>
             </div>
           </Col>
-          <Col sm="7">
+          <Col sm="7" className="info-right-values">
             <div className="numbers-info">
               <div className="latest-numbers">
                 <RouteltteField title="LATEST NUMBERS" numberInfo="1" />
