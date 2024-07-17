@@ -62,8 +62,9 @@
 .betTable-chip {
   font-size: 1rem;
   background: url(../../assets/images/chip.png) no-repeat center;
-  background-size: auto 100%;
+  background-size: 2.5vw;
   height: 3vw;
+  cursor: default;
 }
 
 .hidden-td {
@@ -107,19 +108,30 @@
 }
 
 .betTable-hidden tr {
-  height: 3vw;
+  height: 3.21vw;
 }
 
 .betTable-hidden tr td {
-  border: 1px solid cyan;
-  width: 3.3vw;
+  /* border: 1px solid cyan; */
+  border: none;
+  width: 3.21vw;
+  padding: 0;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  align-content: center;
   /* height: 4vw; */
 }
 
 .betTable-hidden-first-row {
-  height: 4.5vw !important;
+  height: 4.8vw !important;
+}
+
+.betTable-hidden-first-row .betTable-chip {
+  /* background-position: bottom; */
 }
 
 .betTable-hidden-header {
-  width: 5vw !important;
+  width: 4.8vw !important;
 }

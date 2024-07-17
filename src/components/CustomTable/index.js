@@ -40,8 +40,8 @@ const CustomTable = () => {
   useEffect(() => {
     window.addEventListener("load", function () {
       const tableElement = document.getElementsByClassName("betTable-main")[0];
-      const hiddenTable =
-        this.document.getElementsByClassName("betTable-hidden")[0];
+      // const hiddenTable =
+      //   this.document.getElementsByClassName("betTable-hidden")[0];
 
       tableElement.style.height = (tableElement.clientWidth * 5) / 14 + "px";
     });
@@ -55,6 +55,50 @@ const CustomTable = () => {
       // hiddenTable.style.height = (hiddenTable.clientWidth * 5) / 14 + "px";
     });
   });
+
+  const DisplayMainTableRow = ({ rowData }) => {
+    return rowData.map((one) => (
+      <td
+        key={one.label}
+        className={`td-${one.color} ${
+          numStates.includes(one.label) && "hover"
+        } `}
+      >
+        <div onClick={() => placeBets(1, one.label, betUnit)}>{one.label}</div>
+      </td>
+    ));
+  };
+
+  const DisplayHiddenTableRow = ({ rowData }) => {
+    return rowData.map((bet, index) => {
+      const selectedBets = betPlaceData.filter((one) => {
+        return one[1] === `${bet}`;
+      });
+      return (
+        <td
+          className={selectedBets.length ? "betTable-chip" : ""}
+          key={index}
+          onClick={(e) => {
+            if (typeof bet === "object") {
+              placeBets(bet.length, `${bet}`, betUnit);
+            } else {
+              placeBets(1, `${bet}`, betUnit);
+            }
+          }}
+          onMouseEnter={() => {
+            setNumStates(typeof bet === "object" ? bet : [bet]);
+          }}
+          onMouseLeave={() => {
+            setNumStates([]);
+          }}
+        >
+          {selectedBets.length
+            ? selectedBets.reduce((total, one) => total + one[2], 0)
+            : ""}
+        </td>
+      );
+    });
+  };
 
   return (
     <div className="betTable">
@@ -81,24 +125,16 @@ const CustomTable = () => {
                 00
               </div>
               <div
-                className="betTable-header"
+                className={`betTable-header ${
+                  numStates.includes(0) && "hover"
+                }`}
                 onClick={() => placeBets(1, "0", betUnit)}
               >
                 0
               </div>
             </td>
-            {BET_TABLE.firstRow.map((one) => (
-              <td
-                key={one.label}
-                className={`td-${one.color} ${
-                  numStates.includes(one.label) && "hover"
-                } `}
-              >
-                <div onClick={() => placeBets(1, one.label, betUnit)}>
-                  {one.label}
-                </div>
-              </td>
-            ))}
+            <DisplayMainTableRow rowData={BET_TABLE.firstRow} />
+
             <td
               className="td-row"
               onMouseOver={() => {
@@ -112,18 +148,7 @@ const CustomTable = () => {
             </td>
           </tr>
           <tr>
-            {BET_TABLE.secondRow.map((one) => (
-              <td
-                key={one.label}
-                className={`td-${one.color} ${
-                  numStates.includes(one.label) && "hover"
-                }`}
-              >
-                <div onClick={() => placeBets(1, one.label, betUnit)}>
-                  {one.label}
-                </div>
-              </td>
-            ))}
+            <DisplayMainTableRow rowData={BET_TABLE.secondRow} />
             <td
               className="td-row"
               onMouseOver={() => {
@@ -137,18 +162,7 @@ const CustomTable = () => {
             </td>
           </tr>
           <tr>
-            {BET_TABLE.thirdRow.map((one) => (
-              <td
-                key={one.label}
-                className={`td-${one.color} ${
-                  numStates.includes(one.label) && "hover"
-                }`}
-              >
-                <div onClick={() => placeBets(1, one.label, betUnit)}>
-                  {one.label}
-                </div>
-              </td>
-            ))}
+            <DisplayMainTableRow rowData={BET_TABLE.thirdRow} />
             <td
               className="td-row"
               onMouseOver={() => {
@@ -268,123 +282,34 @@ const CustomTable = () => {
       </table>
       <table
         className="betTable-hidden"
-        border={1}
         cellPadding={1}
         cellSpacing={1}
         height={100}
       >
         <tbody>
           <tr className="betTable-hidden-first-row">
-            <td className="betTable-hidden-header" rowSpan={2}>
-              hh
-            </td>
-            {chipsTableData[0].map((one, index) => {
-              return (
-                <td
-                  key={index}
-                  onClick={() => {
-                    if (typeof one != "object") {
-                      placeBets(one.length, `${one}`, betUnit);
-                    } else {
-                      placeBets(1, `${one}`, betUnit);
-                    }
-                  }}
-                  onMouseOver={() => {
-                    setNumStates(typeof one === "object" ? one : [one]);
-                  }}
-                  onMouseOut={() => {
-                    setNumStates([]);
-                  }}
-                ></td>
-              );
-            })}
+            <td className="betTable-hidden-header" rowSpan={2}></td>
+            <DisplayHiddenTableRow rowData={chipsTableData[0]} />
           </tr>
           <tr>
-            {chipsTableData[1].map((one, index) => {
-              return (
-                <td
-                  key={index}
-                  onClick={() => {
-                    if (typeof one != "object") {
-                      placeBets(1, `${one}`, betUnit);
-                    } else {
-                      placeBets(1, `${one}`, betUnit);
-                    }
-                  }}
-                ></td>
-              );
-            })}
+            <DisplayHiddenTableRow rowData={chipsTableData[1]} />
           </tr>
           <tr>
-            {chipsTableData[2].map((one, index) => {
-              return (
-                <td
-                  key={index}
-                  onClick={() => {
-                    if (typeof one != "object") {
-                      placeBets(1, `${one}`, betUnit);
-                    } else {
-                      placeBets(1, `${one}`, betUnit);
-                    }
-                  }}
-                ></td>
-              );
-            })}
+            <DisplayHiddenTableRow rowData={chipsTableData[2]} />
           </tr>
           <tr>
-            <td className="betTable-hidden-header" rowSpan={2}>
-              hh
-            </td>
-            {chipsTableData[3].map((one, index) => {
-              return (
-                <td
-                  key={index}
-                  onClick={() => {
-                    if (typeof one != "object") {
-                      placeBets(1, `${one}`, betUnit);
-                    } else {
-                      placeBets(1, `${one}`, betUnit);
-                    }
-                  }}
-                ></td>
-              );
-            })}
+            <td className="betTable-hidden-header" rowSpan={2}></td>
+            <DisplayHiddenTableRow rowData={chipsTableData[3]} />
           </tr>
           <tr>
-            {chipsTableData[4].map((one, index) => {
-              return (
-                <td
-                  key={index}
-                  onClick={() => {
-                    if (typeof one != "object") {
-                      placeBets(1, `${one}`, betUnit);
-                    } else {
-                      placeBets(1, `${one}`, betUnit);
-                    }
-                  }}
-                ></td>
-              );
-            })}
+            <DisplayHiddenTableRow rowData={chipsTableData[4]} />
           </tr>
           <tr>
             <td
               className="betTable-hidden-header"
-              style={{ visibility: "hidden" }}
+              style={{ visibility: "hidden", border: "none" }}
             ></td>
-            {chipsTableData[5].map((one, index) => {
-              return (
-                <td
-                  key={index}
-                  onClick={() => {
-                    if (typeof one != "object") {
-                      placeBets(1, `${one}`, betUnit);
-                    } else {
-                      placeBets(1, `${one}`, betUnit);
-                    }
-                  }}
-                ></td>
-              );
-            })}
+            <DisplayHiddenTableRow rowData={chipsTableData[5]} />
           </tr>
         </tbody>
       </table>
