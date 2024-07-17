@@ -10,23 +10,21 @@ const Info = () => {
   return (
     <>
       <div className="main-content">
-        <Row style={{ width: "100%" }}>
-          <Col sm="5" className="info-left-values">
+        <div style={{ display: "flex", width: "100%" }} className="info-content">
+          <div className="info-left-values">
             <div className="bet-info">
-              <Row style={{ width: "100%" }}>
-                <Col xs="4" sm="4">
+                <div className="info-child">
                   <RouteltteField title="TOTAL BET" unit="€" value="11" />
-                </Col>
-                <Col xs="4" sm="4">
+                </div>
+                <div className="info-child">
                   <RouteltteField title="CASH" unit="€" value="1000000" />
-                </Col>
-                <Col xs="4" sm="4">
+                </div>
+                <div className="info-child">
                   <RouteltteField title="WIN" unit="€" value="0" />
-                </Col>
-              </Row>
+                </div>
             </div>
-          </Col>
-          <Col sm="7" className="info-right-values">
+          </div>
+          <div className="info-right-values">
             <div className="numbers-info">
               <div className="latest-numbers">
                 <RouteltteField title="LATEST NUMBERS" numberInfo="1" />
@@ -46,15 +44,15 @@ const Info = () => {
               <div className="progress-box">
                 <InputField />
               </div>
-              {/* <div className="progress-box">
+              <div className="progress-box">
                 <RouteltteField title="DOZENS |1|2|3" numberInfo="2" />
               </div>
               <div className="progress-box">
                 <RouteltteField title="COLUMNS |1|2|3" numberInfo="2" />
-              </div> */}
+              </div>
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
       </div>
     </>
   );

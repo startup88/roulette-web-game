@@ -511,7 +511,7 @@ class App extends React.Component {
         <div className="main">
           <div
             className="board"
-            // style={{ scale: `1 ${ scale }` }}
+            style={{ scale: `1 ${ scale }` }}
             ref={this.state.boardRef}
           >
             <div className="content">
