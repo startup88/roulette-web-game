@@ -44,6 +44,30 @@ class App extends React.Component {
     fifthRow,
     columnLeft,
     columnRight,
+    scale: window.innerWidth / window.outerWidth,
+    width: window.innerWidth,
+    height: window.innerHeight,
+    boardRef: React.createRef()
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
+  handleResize = () => {
+    if(this.state.boardRef.current){
+      const scale1 = this.state.boardRef.current.clientWidth / window.outerWidth;
+      const deltaScale = 0.3 * (scale1 - 0.48) / 0.52;
+      console.log(deltaScale);
+      
+      this.setState({
+        scale: 0.7 + deltaScale
+      })
+    }
   };
 
   //declaring here all the combinations, easier this way
@@ -251,10 +275,6 @@ class App extends React.Component {
     "33",
     "35",
   ];
-
-  componentDidMount() {
-    //grab here user data from database and set state with that data
-  }
 
   isSpinning = (isspinning) => {
     isspinning === true
@@ -483,10 +503,17 @@ class App extends React.Component {
   };
 
   render() {
+    const { scale } = this.state;
+    console.log(scale);
+
     return (
-      <>
+      <div>
         <div className="main">
-          <div className="board">
+          <div
+            className="board"
+            // style={{ scale: `1 ${ scale }` }}
+            ref={this.state.boardRef}
+          >
             <div className="content">
               <div className="info">
                 <Info />
@@ -494,7 +521,6 @@ class App extends React.Component {
               <div className="table">
                 <TableComponent />
               </div>
-
               <div className="control">
                 <Controls />
               </div>
@@ -502,7 +528,7 @@ class App extends React.Component {
           </div>
         </div>
         <Footer />
-      </>
+      </div>
     );
   }
 }
