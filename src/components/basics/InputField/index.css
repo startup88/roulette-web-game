@@ -12,3 +12,15 @@
 .input-field:focus {
   outline: none;
 }
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+}

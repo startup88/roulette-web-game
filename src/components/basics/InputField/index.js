@@ -9,7 +9,6 @@ const InputField = () => {
           <div
             style={{
               position: "relative",
-              fontSize: "14px",
               display: "flex",
               justifyContent: "center",
             }}
@@ -20,6 +19,20 @@ const InputField = () => {
             <input
               type="number"
               className="input-field"
+              min={0}
+              max={36}
+              onChange={(e) => {
+                e.persist();
+                let inputValue = e.target.value;
+                if (inputValue > 36) {
+                  inputValue = 36;
+                  e.target.value = 36;
+                } else if (inputValue < 0) {
+                  inputValue = 0;
+                  e.target.value = 0;
+                }
+                console.log("event =>", inputValue == "0");
+              }}
               style={{
                 backgroundColor: "transparent",
                 color: "#000000",
