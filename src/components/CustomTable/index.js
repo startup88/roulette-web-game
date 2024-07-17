@@ -100,6 +100,59 @@ const CustomTable = () => {
     });
   };
 
+  const DisplayHiddenTableHeader = ({ label }) => {
+    const selectedBets = betPlaceData.filter((one) => {
+      return one[1] === label;
+    });
+
+    return (
+      <td
+        rowSpan={2}
+        className={`betTable-hidden-header ${
+          selectedBets.length ? "betTable-chip" : ""
+        }`}
+        onClick={(e) => {
+          placeBets(1, label, betUnit);
+        }}
+        onMouseEnter={() => {
+          setNumStates([label]);
+        }}
+        onMouseLeave={() => {
+          setNumStates([]);
+        }}
+      >
+        {selectedBets.length
+          ? selectedBets.reduce((total, one) => total + one[2], 0)
+          : ""}
+      </td>
+    );
+  };
+  const DisplayHiddenTableEnd = ({ label, betOptions, className, ...rest }) => {
+    const selectedBets = betPlaceData.filter((one) => {
+      return one[1] === `${betOptions}`;
+    });
+
+    return (
+      <td
+        className={`${className} ${selectedBets.length ? "betTable-chip" : ""}`}
+        onClick={(e) => {
+          placeBets(12, `${betOptions}`, betUnit);
+        }}
+        onMouseEnter={() => {
+          setNumStates(betOptions);
+        }}
+        onMouseLeave={() => {
+          setNumStates([]);
+        }}
+        {...rest}
+      >
+        {selectedBets.length
+          ? selectedBets.reduce((total, one) => total + one[2], 0)
+          : label}
+      </td>
+    );
+  };
+
   return (
     <div className="betTable">
       <table
@@ -135,148 +188,77 @@ const CustomTable = () => {
             </td>
             <DisplayMainTableRow rowData={BET_TABLE.firstRow} />
 
-            <td
-              className="td-row"
-              onMouseOver={() => {
-                setNumStates(twoByOneFirst);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            >
-              2 to 1
-            </td>
+            <DisplayHiddenTableEnd
+              className={"td-row"}
+              label={"2 to 1"}
+              betOptions={twoByOneFirst}
+            />
           </tr>
           <tr>
             <DisplayMainTableRow rowData={BET_TABLE.secondRow} />
-            <td
-              className="td-row"
-              onMouseOver={() => {
-                setNumStates(twoByOneSecond);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            >
-              2 to 1
-            </td>
+            <DisplayHiddenTableEnd
+              className={"td-row"}
+              label={"2 to 1"}
+              betOptions={twoByOneSecond}
+            />
           </tr>
           <tr>
             <DisplayMainTableRow rowData={BET_TABLE.thirdRow} />
-            <td
-              className="td-row"
-              onMouseOver={() => {
-                setNumStates(twoByOneThird);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            >
-              2 to 1
-            </td>
+
+            <DisplayHiddenTableEnd
+              className={"td-row"}
+              label={"2 to 1"}
+              betOptions={twoByOneThird}
+            />
           </tr>
           <tr>
             <td className="hidden-td"></td>
-            <td
+            <DisplayHiddenTableEnd
               colSpan={4}
-              onMouseOver={() => {
-                setNumStates(firstTwelves);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            >
-              1st 12
-            </td>
-            <td
+              label={"1st 12"}
+              betOptions={firstTwelves}
+            />
+            <DisplayHiddenTableEnd
               colSpan={4}
-              onMouseOver={() => {
-                setNumStates(secondTwelves);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            >
-              2nd 12
-            </td>
-            <td
+              label={"2nd 12"}
+              betOptions={secondTwelves}
+            />
+            <DisplayHiddenTableEnd
               colSpan={4}
-              onMouseOver={() => {
-                setNumStates(thirdTwelves);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            >
-              3rd 12
-            </td>
+              label={"3rd 12"}
+              betOptions={thirdTwelves}
+            />
           </tr>
           <tr>
             <td className="hidden-td"></td>
-            <td
+            <DisplayHiddenTableEnd
               colSpan={2}
-              onMouseOver={() => {
-                setNumStates(oneToEighteen);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            >
-              1-18
-            </td>
-            <td
+              label={"1-18"}
+              betOptions={oneToEighteen}
+            />
+            <DisplayHiddenTableEnd
               colSpan={2}
-              onMouseOver={() => {
-                setNumStates(even);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            >
-              Even
-            </td>
-            <td
-              className="betTable-red-diamond"
+              label={"Even"}
+              betOptions={even}
+            />
+            <DisplayHiddenTableEnd
+              className={"betTable-red-diamond"}
               colSpan={2}
-              onMouseOver={() => {
-                setNumStates(red);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            ></td>
-            <td
-              className="betTable-black-diamond"
+              // label={"1-18"}
+              betOptions={red}
+            />
+            <DisplayHiddenTableEnd
+              className={"betTable-black-diamond"}
               colSpan={2}
-              onMouseOver={() => {
-                setNumStates(black);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            ></td>
-            <td
+              // label={"1-18"}
+              betOptions={black}
+            />
+            <DisplayHiddenTableEnd colSpan={2} label={"Odd"} betOptions={odd} />
+            <DisplayHiddenTableEnd
               colSpan={2}
-              onMouseOver={() => {
-                setNumStates(odd);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            >
-              Odd
-            </td>
-            <td
-              colSpan={2}
-              onMouseOver={() => {
-                setNumStates(nineteenToThirtySix);
-              }}
-              onMouseOut={() => {
-                setNumStates([]);
-              }}
-            >
-              19-36
-            </td>
+              label={"19-36"}
+              betOptions={nineteenToThirtySix}
+            />
           </tr>
         </tbody>
       </table>
@@ -288,7 +270,7 @@ const CustomTable = () => {
       >
         <tbody>
           <tr className="betTable-hidden-first-row">
-            <td className="betTable-hidden-header" rowSpan={2}></td>
+            <DisplayHiddenTableHeader label={"00"} />
             <DisplayHiddenTableRow rowData={chipsTableData[0]} />
           </tr>
           <tr>
@@ -298,7 +280,9 @@ const CustomTable = () => {
             <DisplayHiddenTableRow rowData={chipsTableData[2]} />
           </tr>
           <tr>
-            <td className="betTable-hidden-header" rowSpan={2}></td>
+            <DisplayHiddenTableHeader label={"0"} />
+
+            {/* <td className="betTable-hidden-header" rowSpan={2}></td> */}
             <DisplayHiddenTableRow rowData={chipsTableData[3]} />
           </tr>
           <tr>
