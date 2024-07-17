@@ -14,6 +14,7 @@ import {
   odd,
   red,
   black,
+  chipsTableData,
 } from "../../consts/BetTable";
 
 import "./styles.css";
@@ -36,9 +37,34 @@ const CustomTable = () => {
     setBetPlaceData([...betPlaceData, [type, numStr, amount]]);
   };
 
+  useEffect(() => {
+    window.addEventListener("load", function () {
+      const tableElement = document.getElementsByClassName("betTable-main")[0];
+      const hiddenTable =
+        this.document.getElementsByClassName("betTable-hidden")[0];
+
+      tableElement.style.height = (tableElement.clientWidth * 5) / 14 + "px";
+    });
+
+    window.addEventListener("resize", function () {
+      const tableElement = document.getElementsByClassName("betTable-main")[0];
+      const hiddenTable =
+        this.document.getElementsByClassName("betTable-hidden")[0];
+
+      tableElement.style.height = (tableElement.clientWidth * 5) / 14 + "px";
+      // hiddenTable.style.height = (hiddenTable.clientWidth * 5) / 14 + "px";
+    });
+  });
+
   return (
     <div className="betTable">
-      <table border={1} cellPadding={1} cellSpacing={1} height={100}>
+      <table
+        className="betTable-main"
+        border={1}
+        cellPadding={1}
+        cellSpacing={1}
+        // height={100}
+      >
         <tbody>
           <tr>
             <td
@@ -46,34 +72,20 @@ const CustomTable = () => {
               rowSpan={3}
               style={{ alignContent: "center", padding: 0 }}
             >
-              {displayTableTd("single", `00`) ? (
-                <div>
-                  <div className="betTable-chip">
-                    {displayTableTd("single", `00`)}
-                  </div>
-                </div>
-              ) : (
-                <div
-                  className="betTable-header"
-                  onClick={() => placeBets("single", "00", betUnit)}
-                >
-                  00
-                </div>
-              )}
-              {displayTableTd("single", `0`) ? (
-                <div>
-                  <div className="betTable-chip">
-                    {displayTableTd("single", `0`)}
-                  </div>
-                </div>
-              ) : (
-                <div
-                  className="betTable-header"
-                  onClick={() => placeBets("single", "0", betUnit)}
-                >
-                  0
-                </div>
-              )}
+              <div
+                className={`betTable-header ${
+                  numStates.includes("00") && "hover"
+                }`}
+                onClick={() => placeBets(1, "00", betUnit)}
+              >
+                00
+              </div>
+              <div
+                className="betTable-header"
+                onClick={() => placeBets(1, "0", betUnit)}
+              >
+                0
+              </div>
             </td>
             {BET_TABLE.firstRow.map((one) => (
               <td
@@ -82,20 +94,9 @@ const CustomTable = () => {
                   numStates.includes(one.label) && "hover"
                 } `}
               >
-                {displayTableTd("single", one.label) ? (
-                  <div>
-                    <div className="betTable-chip">
-                      {displayTableTd("single", one.label)}
-                    </div>
-                  </div>
-                ) : (
-                  <div
-                    className="betTable-header"
-                    onClick={() => placeBets("single", one.label, betUnit)}
-                  >
-                    {one.label}
-                  </div>
-                )}
+                <div onClick={() => placeBets(1, one.label, betUnit)}>
+                  {one.label}
+                </div>
               </td>
             ))}
             <td
@@ -118,20 +119,9 @@ const CustomTable = () => {
                   numStates.includes(one.label) && "hover"
                 }`}
               >
-                {displayTableTd("single", one.label) ? (
-                  <div>
-                    <div className="betTable-chip">
-                      {displayTableTd("single", one.label)}
-                    </div>
-                  </div>
-                ) : (
-                  <div
-                    className="betTable-header"
-                    onClick={() => placeBets("single", one.label, betUnit)}
-                  >
-                    {one.label}
-                  </div>
-                )}
+                <div onClick={() => placeBets(1, one.label, betUnit)}>
+                  {one.label}
+                </div>
               </td>
             ))}
             <td
@@ -154,20 +144,9 @@ const CustomTable = () => {
                   numStates.includes(one.label) && "hover"
                 }`}
               >
-                {displayTableTd("single", one.label) ? (
-                  <div>
-                    <div className="betTable-chip">
-                      {displayTableTd("single", one.label)}
-                    </div>
-                  </div>
-                ) : (
-                  <div
-                    className="betTable-header"
-                    onClick={() => placeBets("single", one.label, betUnit)}
-                  >
-                    {one.label}
-                  </div>
-                )}
+                <div onClick={() => placeBets(1, one.label, betUnit)}>
+                  {one.label}
+                </div>
               </td>
             ))}
             <td
@@ -284,6 +263,128 @@ const CustomTable = () => {
             >
               19-36
             </td>
+          </tr>
+        </tbody>
+      </table>
+      <table
+        className="betTable-hidden"
+        border={1}
+        cellPadding={1}
+        cellSpacing={1}
+        height={100}
+      >
+        <tbody>
+          <tr className="betTable-hidden-first-row">
+            <td className="betTable-hidden-header" rowSpan={2}>
+              hh
+            </td>
+            {chipsTableData[0].map((one, index) => {
+              return (
+                <td
+                  key={index}
+                  onClick={() => {
+                    if (typeof one != "object") {
+                      placeBets(one.length, `${one}`, betUnit);
+                    } else {
+                      placeBets(1, `${one}`, betUnit);
+                    }
+                  }}
+                  onMouseOver={() => {
+                    setNumStates(typeof one === "object" ? one : [one]);
+                  }}
+                  onMouseOut={() => {
+                    setNumStates([]);
+                  }}
+                ></td>
+              );
+            })}
+          </tr>
+          <tr>
+            {chipsTableData[1].map((one, index) => {
+              return (
+                <td
+                  key={index}
+                  onClick={() => {
+                    if (typeof one != "object") {
+                      placeBets(1, `${one}`, betUnit);
+                    } else {
+                      placeBets(1, `${one}`, betUnit);
+                    }
+                  }}
+                ></td>
+              );
+            })}
+          </tr>
+          <tr>
+            {chipsTableData[2].map((one, index) => {
+              return (
+                <td
+                  key={index}
+                  onClick={() => {
+                    if (typeof one != "object") {
+                      placeBets(1, `${one}`, betUnit);
+                    } else {
+                      placeBets(1, `${one}`, betUnit);
+                    }
+                  }}
+                ></td>
+              );
+            })}
+          </tr>
+          <tr>
+            <td className="betTable-hidden-header" rowSpan={2}>
+              hh
+            </td>
+            {chipsTableData[3].map((one, index) => {
+              return (
+                <td
+                  key={index}
+                  onClick={() => {
+                    if (typeof one != "object") {
+                      placeBets(1, `${one}`, betUnit);
+                    } else {
+                      placeBets(1, `${one}`, betUnit);
+                    }
+                  }}
+                ></td>
+              );
+            })}
+          </tr>
+          <tr>
+            {chipsTableData[4].map((one, index) => {
+              return (
+                <td
+                  key={index}
+                  onClick={() => {
+                    if (typeof one != "object") {
+                      placeBets(1, `${one}`, betUnit);
+                    } else {
+                      placeBets(1, `${one}`, betUnit);
+                    }
+                  }}
+                ></td>
+              );
+            })}
+          </tr>
+          <tr>
+            <td
+              className="betTable-hidden-header"
+              style={{ visibility: "hidden" }}
+            ></td>
+            {chipsTableData[5].map((one, index) => {
+              return (
+                <td
+                  key={index}
+                  onClick={() => {
+                    if (typeof one != "object") {
+                      placeBets(1, `${one}`, betUnit);
+                    } else {
+                      placeBets(1, `${one}`, betUnit);
+                    }
+                  }}
+                ></td>
+              );
+            })}
           </tr>
         </tbody>
       </table>

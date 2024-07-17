@@ -1,38 +1,44 @@
+:root {
+  --primary-width: 6.25vw;
+  --chip-size: 3vw;
+}
+
 .betTable {
-  margin: 1rem;
+  width: 90%;
+  margin: auto;
+  margin-top: 1rem;
 
   display: flex;
   justify-content: center;
+
+  position: relative;
+  min-height: 45vh;
 }
 
-.betTable td {
-  width: 6.25vw;
+.betTable-main {
+  width: 100%;
+  border: none;
+  color: white;
+  font-size: 2rem;
+
+  /* aspect-ratio: 14/5; */
+
+  position: absolute;
+  inset: 0;
+}
+.betTable-main td {
+  padding: 0;
+  width: 7.143%;
   /* height: 6.25vw; */
   background-color: transparent;
-  border: 1px solid white;
+  border: 0.5px solid whitesmoke;
 
   align-content: center;
   text-align: center;
   font-weight: 700;
 
   background-size: 100% 100%;
-  aspect-ratio: 1/1;
   cursor: default;
-}
-
-.betTable table {
-  width: 95%;
-  border: none;
-  /* width: 6.25vw;
-  height: 6.25vw; */
-  /* background: url(../../assets/images/table.png) no-repeat center; */
-  background-clip: border-box;
-  background-size: 100% 100%;
-  /* background-position: -7px -523px; */
-  color: white;
-  font-size: 2.5rem;
-
-  aspect-ratio: 14/5;
 }
 
 .betTable-zeros {
@@ -45,6 +51,10 @@
   align-content: center;
 }
 .betTable-zeros > .betTable-header:hover {
+  background: url(../../assets/images/zero_hover.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.betTable-zeros > .betTable-header.hover {
   background: url(../../assets/images/zero_hover.png) no-repeat center;
   background-size: 100% 100%;
 }
@@ -88,4 +98,28 @@
 .betTable-red-diamond {
   background: url(../../assets/images/red_diamond.png) no-repeat center;
   background-size: 80% 80% !important;
+}
+
+.betTable-hidden {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.betTable-hidden tr {
+  height: 3vw;
+}
+
+.betTable-hidden tr td {
+  border: 1px solid cyan;
+  width: 3.3vw;
+  /* height: 4vw; */
+}
+
+.betTable-hidden-first-row {
+  height: 4.5vw !important;
+}
+
+.betTable-hidden-header {
+  width: 5vw !important;
 }
