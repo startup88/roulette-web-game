@@ -1,7 +1,27 @@
 import React from "react";
 import "./index.css";
 
+import useHook from "../../../store/hooks";
+
+const betOptions = [0.5, 1, 5, 10, 25, 50, 100];
+
 const PresetBet = () => {
+  const {
+    state: { betUnit },
+    setState,
+  } = useHook();
+
+  const BetUnitComponent = ({ betOption, onChangeOption }) => {
+    return (
+      <div
+        className={`bet-box ${betUnit === betOption ? "selected" : ""} `}
+        onClick={() => onChangeOption(betOption)}
+      >
+        {betOption}
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="preset-content">
@@ -15,13 +35,15 @@ const PresetBet = () => {
           BET AMOUNT
         </div>
         <div className="box-content">
-          <div className="bet-box">0.5</div>
-          <div className="bet-box">1</div>
-          <div className="bet-box">5</div>
-          <div className="bet-box">10</div>
-          <div className="bet-box">25</div>
-          <div className="bet-box">50</div>
-          <div className="bet-box">100</div>
+          {betOptions.map((betOption) => (
+            <BetUnitComponent
+              key={betOption}
+              betOption={betOption}
+              onChangeOption={(option) => {
+                setState({ field: "betUnit", value: option });
+              }}
+            />
+          ))}
         </div>
       </div>
     </>

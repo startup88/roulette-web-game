@@ -1,25 +1,33 @@
-.box-content{
-    display: flex;
-    padding: 10px;
-    justify-content: center;
+.box-content {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
 }
-.bet-box{
-    margin-right: 20px ;
-    width: 7%;
-    text-align: center  ;
-    background-image: url('/preset2.png');
-    background-size: 100% 110%;
-    background-repeat: no-repeat;
-    background-position: center;
+.bet-box {
+  margin-right: 20px;
+  width: 7%;
+  text-align: center;
+  background-image: url("/preset3.png");
+  background-size: 100% 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
 }
-.preset-content{
-    color: white;
-    font-weight: bold;
-    background-image: url('/inputfield.png');
-    background-size: 100% 110%;
-    background-repeat: no-repeat;
-    background-position: center;
+.bet-box:hover {
+  background-image: url("/preset2.png");
 }
-.box-content{
-    color: black;
+.bet-box.selected {
+  background-image: url("/preset2.png");
+}
+
+.preset-content {
+  color: white;
+  font-weight: bold;
+  background-image: url("/inputfield.png");
+  background-size: 100% 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.box-content {
+  color: black;
 }

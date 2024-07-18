@@ -1,11 +1,11 @@
 import { SET_STATE } from "./actions";
 
 export const initialState = {
-  totalBet: 0,
   cash: 1000,
   wheelNumber: undefined,
   betsData: [],
   winAmount: 0,
+  betUnit: 1,
 };
 
 export default (state = initialState, { type, payload }) => {
