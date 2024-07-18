@@ -17,7 +17,7 @@
   width: 80%;
 }
 .control-clear {
-  background-image: url("/clear1.png");
+  background-image: url("/clean3.png");
   background-size: 100% 110%;
   background-repeat: no-repeat;
   background-position: center;
@@ -25,16 +25,23 @@
 
   font-weight: bold;
 }
+.control-clear:hover {
+  background-image: url("/clear1.png");
+}
+.control-clear:focus {
+  background-image: url("/clear2.png");
+}
 .control-button {
   max-width: 25%;
   margin-right: 6%;
   border-radius: 100%;
   border: none;
-
   width: 100px;
   height: 100px;
-
   margin: auto;
+}
+.control-button:focus{
+  border: none;
 }
 .button-spin {
   max-width: 100%;
@@ -52,6 +59,14 @@
   border-top-right-radius: 20px;
 }
 .control-undo {
+  background-image: url("/undo3.png");
+  background-size: 100% 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: black;
+  font-weight: bold;
+}
+.control-undo:hover {
   background-image: url("/undo2.png");
   background-size: 100% 110%;
   background-repeat: no-repeat;
@@ -59,13 +74,27 @@
   color: black;
   font-weight: bold;
 }
-.control-double {
-  background-image: url("/double3.png");
+.control-undo:focus {
+  background-image: url("/undo1.png");
   background-size: 100% 110%;
   background-repeat: no-repeat;
   background-position: center;
   color: black;
   font-weight: bold;
+}
+.control-double {
+  background-image: url("/double2.png");
+  background-size: 100% 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: black;
+  font-weight: bold;
+}
+.control-double:hover {
+  background-image: url("/double3.png");
+}
+.control-double:focus {
+  background-image: url("/double1.png");
 }
 .control-auto {
   background-image: url("/autospin.png");
@@ -78,8 +107,11 @@
   display: flex;
   justify-content: center;
 }
+.control-auto:focus{
+  background-image: url("/autospin2.png");
+}
 .control-spin {
-  background-image: url("/spin1.png");
+  background-image: url("/spin2.png");
   background-size: 100% 110%;
   background-repeat: no-repeat;
   background-position: center;
@@ -88,7 +120,12 @@
   position: relative;
   top: -25%;
 }
-
+.control-spin:hover{
+  background-image: url("/spin1.png");
+}
+.control-spin:focus{
+  background-image: url("/spin3.png");
+}
 .button-control-box {
   display: flex;
   height: 100%;

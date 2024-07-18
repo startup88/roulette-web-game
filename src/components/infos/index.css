@@ -5,7 +5,12 @@
 .main-content {
   display: flex;
 }
-
+.info-left-values{
+  width: 41.66%;
+}
+.info-right-values{
+  width: 58.33%;
+}
 .numbers-info {
   padding: 10px;
   display: flex;
@@ -27,6 +32,9 @@
 .progress-box {
   width: 100%;
 }
+.info-child{
+  width: 33.3%;
+}
 @media ( max-width: 1175px )  {
   .bet-title{
     font-size: 1.5vh;
@@ -45,8 +53,25 @@
   }
   .info-left-values{
     float: right;
+    order: 2;
+    display: block;
+    width: 25%;
+  }
+  .bet-info{
+    top: 50px;
+    position: relative;
+    display: block;
+  }
+  .info-child{
+    width: 100%;
   }
   .info-right-values{
     float: left;
+    order: 1;
+    width: 75%;
+    position: relative;
+    left: -250px;
+    top: 200px;
+    transform: rotate(90deg);
   }
 }
