@@ -96,7 +96,9 @@ const Controls = () => {
               </button>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <button className="button-spin control-auto button-auto-radius">
-                  <p className="auto-spin">AUTO SPIN</p>
+                  <p className="auto-spin" style={{ visibility: "hidden" }}>
+                    AUTO SPIN
+                  </p>
                 </button>
                 <button
                   className="button-spin control-spin button-spin-radius"

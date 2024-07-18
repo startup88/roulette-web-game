@@ -13,10 +13,13 @@
 
   position: relative;
   min-height: 45vh;
+
+  aspect-ratio: 14/5;
 }
 
 .betTable-main {
   width: 100%;
+  max-height: 100%;
   border: none;
   color: white;
   font-size: 2rem;
@@ -135,6 +138,12 @@
   text-align: center;
   align-content: center;
   /* height: 4vw; */
+}
+
+@media (min-width: 1570px) {
+  .betTable-hidden tr td {
+    width: 3.18vw;
+  }
 }
 
 .betTable-hidden-first-row {

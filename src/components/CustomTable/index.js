@@ -204,7 +204,7 @@ const CustomTable = () => {
                     style={{
                       position: "absolute",
                       top: "10%",
-                      width: "20%",
+                      width: "30%",
                       height: "40%",
                     }}
                   />
@@ -225,7 +225,7 @@ const CustomTable = () => {
                     style={{
                       position: "absolute",
                       top: "10%",
-                      width: "20%",
+                      width: "30%",
                       height: "40%",
                     }}
                   />

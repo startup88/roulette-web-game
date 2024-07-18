@@ -31,24 +31,22 @@ const App = () => {
 
   return (
     <Provider initialState={initialState} reducer={reducer}>
-      <div>
-        <div className="main">
-          <div className="board" style={{ scale: `1 ${scale}` }} ref={boardRef}>
-            <div className="content">
-              <div className="info">
-                <Info />
-              </div>
-              <div className="table">
-                <TableComponent />
-              </div>
-              <div className="control">
-                <Controls />
-              </div>
+      <div className="main">
+        <div className="board" style={{ scale: `1 ${scale}` }} ref={boardRef}>
+          <div className="content">
+            <div className="info">
+              <Info />
+            </div>
+            <div className="table">
+              <TableComponent />
+            </div>
+            <div className="control">
+              <Controls />
             </div>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </Provider>
   );
 };
