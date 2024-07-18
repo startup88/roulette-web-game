@@ -40,7 +40,7 @@
   height: 100px;
   margin: auto;
 }
-.control-button:focus{
+.control-button:focus {
   border: none;
 }
 .button-spin {
@@ -107,7 +107,7 @@
   display: flex;
   justify-content: center;
 }
-.control-auto:focus{
+.control-auto:focus {
   background-image: url("/autospin2.png");
 }
 .control-spin {
@@ -120,10 +120,10 @@
   position: relative;
   top: -25%;
 }
-.control-spin:hover{
+.control-spin:hover {
   background-image: url("/spin1.png");
 }
-.control-spin:focus{
+.control-spin:focus {
   background-image: url("/spin3.png");
 }
 .button-control-box {

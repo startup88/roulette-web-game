@@ -17,16 +17,21 @@ import {
   chipsTableData,
 } from "../../consts/BetTable";
 
+import useHook from "../../store/hooks";
+
 import "./styles.css";
 const CustomTable = () => {
   const [numStates, setNumStates] = useState([]);
-  const [betPlaceData, setBetPlaceData] = useState([]);
+  // const [betPlaceData, setBetPlaceData] = useState([]);
 
-  const betUnit = 1;
+  const {
+    state: { betsData, betUnit },
+    setState,
+  } = useHook();
 
   const displayTableTd = (type, numStr) => {
-    if (betPlaceData && betPlaceData.length) {
-      return betPlaceData
+    if (betsData && betsData.length) {
+      return betsData
         .filter((one) => one[0] === type && one[1] === numStr)
         .reduce((total, one) => total + one[2], 0);
     }
@@ -34,7 +39,11 @@ const CustomTable = () => {
   };
 
   const placeBets = (type, numStr, amount) => {
-    setBetPlaceData([...betPlaceData, [type, numStr, amount]]);
+    setState({
+      field: "betsData",
+      value: [...betsData, [type, numStr, amount]],
+    });
+    // setBetPlaceData([...betsData, [type, numStr, amount]]);
   };
 
   useEffect(() => {
@@ -71,7 +80,7 @@ const CustomTable = () => {
 
   const DisplayHiddenTableRow = ({ rowData }) => {
     return rowData.map((bet, index) => {
-      const selectedBets = betPlaceData.filter((one) => {
+      const selectedBets = betsData.filter((one) => {
         return one[1] === `${bet}`;
       });
       return (
@@ -101,7 +110,7 @@ const CustomTable = () => {
   };
 
   const DisplayHiddenTableHeader = ({ label }) => {
-    const selectedBets = betPlaceData.filter((one) => {
+    const selectedBets = betsData.filter((one) => {
       return one[1] === label;
     });
 
@@ -128,7 +137,7 @@ const CustomTable = () => {
     );
   };
   const DisplayHiddenTableEnd = ({ label, betOptions, className, ...rest }) => {
-    const selectedBets = betPlaceData.filter((one) => {
+    const selectedBets = betsData.filter((one) => {
       return one[1] === `${betOptions}`;
     });
 
@@ -136,7 +145,7 @@ const CustomTable = () => {
       <td
         className={`${className} ${selectedBets.length ? "betTable-chip" : ""}`}
         onClick={(e) => {
-          placeBets(12, `${betOptions}`, betUnit);
+          placeBets(betOptions.length, `${betOptions}`, betUnit);
         }}
         onMouseEnter={() => {
           setNumStates(betOptions);

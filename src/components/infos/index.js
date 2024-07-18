@@ -1,27 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 
 import RouteltteField from "../basics/rouletteField";
 import InputField from "../basics/InputField";
 
+import useHook from "../../store/hooks";
+
 import "./index.css";
 
 const Info = () => {
+  const {
+    state: { cash, winAmount, betsData },
+    setState,
+  } = useHook();
+
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    if (betsData.length) {
+      setTotal(betsData.reduce((total, one) => total + one[2], 0));
+    }
+  }, [betsData]);
+
   return (
     <>
       <div className="main-content">
-        <div style={{ display: "flex", width: "100%" }} className="info-content">
+        <div
+          style={{ display: "flex", width: "100%" }}
+          className="info-content"
+        >
           <div className="info-left-values">
             <div className="bet-info">
-                <div className="info-child">
-                  <RouteltteField title="TOTAL BET" unit="€" value="11" />
-                </div>
-                <div className="info-child">
-                  <RouteltteField title="CASH" unit="€" value="1000000" />
-                </div>
-                <div className="info-child">
-                  <RouteltteField title="WIN" unit="€" value="0" />
-                </div>
+              <div className="info-child">
+                <RouteltteField title="TOTAL BET" unit="€" value={total} />
+              </div>
+              <div className="info-child">
+                <RouteltteField
+                  title="CASH"
+                  unit="€"
+                  value={cash}
+                  onChangeCash={setState}
+                />
+              </div>
+              <div className="info-child">
+                <RouteltteField title="WIN" unit="€" value={winAmount} />
+              </div>
             </div>
           </div>
           <div className="info-right-values">
@@ -43,12 +66,6 @@ const Info = () => {
               </div>
               <div className="progress-box">
                 <InputField />
-              </div>
-              <div className="progress-box">
-                <RouteltteField title="DOZENS |1|2|3" numberInfo="2" />
-              </div>
-              <div className="progress-box">
-                <RouteltteField title="COLUMNS |1|2|3" numberInfo="2" />
               </div>
             </div>
           </div>

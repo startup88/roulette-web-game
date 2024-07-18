@@ -3,7 +3,7 @@ import React from "react";
 import "./index.css";
 
 const RouteltteField = (props) => {
-  const { title, value, unit, numberInfo } = props;
+  const { title, value, unit, numberInfo, onChangeCash } = props;
   const numberArrays = [];
 
   return (
@@ -46,7 +46,10 @@ const RouteltteField = (props) => {
                     width: "90%",
                     textAlign: "center",
                   }}
-                  disabled
+                  onChange={(e) => {
+                    onChangeCash({ field: "cash", value: e.target.value });
+                  }}
+                  // disabled
                 />
               ) : (
                 <>

@@ -1,7 +1,14 @@
 import React from "react";
 import "./index.css";
 
+import useHook from "../../../store/hooks";
+
 const InputField = () => {
+  const {
+    state: { wheelNumber },
+    setState,
+  } = useHook();
+
   return (
     <>
       <div className="input-content">
@@ -21,6 +28,7 @@ const InputField = () => {
               className="input-field"
               min={0}
               max={36}
+              value={wheelNumber}
               onChange={(e) => {
                 e.persist();
                 let inputValue = e.target.value;
@@ -31,7 +39,8 @@ const InputField = () => {
                   inputValue = 0;
                   e.target.value = 0;
                 }
-                console.log("event =>", inputValue == "0");
+
+                setState({ field: "wheelNumber", value: inputValue });
               }}
               style={{
                 backgroundColor: "transparent",
