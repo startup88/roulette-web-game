@@ -34,8 +34,11 @@ const Controls = () => {
       });
       setState({ field: "winAmount", value: newWin });
       setState({ field: "previousBetsData", value: betsData });
-      setState({ field: "betsData", value: [] });
-      setState({ field: "wheelNumber", value: [] });
+
+      setTimeout(() => {
+        setState({ field: "betsData", value: [] });
+        setState({ field: "wheelNumber", value: undefined });
+      }, 2000);
     } else if (!betsData.length && previousBetsData.length) {
       setState({ field: "betsData", value: previousBetsData });
     } else {

@@ -4,9 +4,11 @@
   justify-content: center;
 }
 .bet-box {
-  margin-right: 20px;
-  width: 7%;
+  margin-right: 1%;
+  width: 10%;
+  aspect-ratio: 1/1;
   text-align: center;
+  align-content: center;
   background-image: url("/preset3.png");
   background-size: 100% 110%;
   background-repeat: no-repeat;

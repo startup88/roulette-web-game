@@ -28,7 +28,7 @@ const InputField = () => {
               className="input-field"
               min={0}
               max={36}
-              value={wheelNumber}
+              value={Number(wheelNumber)}
               onChange={(e) => {
                 e.persist();
                 let inputValue = e.target.value;
@@ -39,8 +39,11 @@ const InputField = () => {
                   inputValue = 0;
                   e.target.value = 0;
                 }
+                if (`${inputValue}` !== "00") {
+                  inputValue = Number(inputValue);
+                }
 
-                setState({ field: "wheelNumber", value: inputValue });
+                setState({ field: "wheelNumber", value: `${inputValue}` });
               }}
               style={{
                 backgroundColor: "transparent",

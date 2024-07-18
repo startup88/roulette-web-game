@@ -19,24 +19,17 @@ import {
 
 import useHook from "../../store/hooks";
 
+import TipImg from "../../assets/images/tip.png";
+
 import "./styles.css";
 const CustomTable = () => {
   const [numStates, setNumStates] = useState([]);
   // const [betPlaceData, setBetPlaceData] = useState([]);
 
   const {
-    state: { betsData, betUnit },
+    state: { betsData, betUnit, wheelNumber },
     setState,
   } = useHook();
-
-  const displayTableTd = (type, numStr) => {
-    if (betsData && betsData.length) {
-      return betsData
-        .filter((one) => one[0] === type && one[1] === numStr)
-        .reduce((total, one) => total + one[2], 0);
-    }
-    return 0;
-  };
 
   const placeBets = (type, numStr, amount) => {
     setState({
@@ -71,18 +64,37 @@ const CustomTable = () => {
         key={one.label}
         className={`td-${one.color} ${
           numStates.includes(one.label) && "hover"
-        } `}
+        } ${wheelNumber === `${one.label}` && ".wheel-number"} `}
       >
-        <div onClick={() => placeBets(1, one.label, betUnit)}>{one.label}</div>
+        <div
+          onClick={() => {
+            placeBets(1, one.label, betUnit);
+          }}
+          style={{ position: "relative" }}
+        >
+          {wheelNumber === `${one.label}` && (
+            <img
+              src={TipImg}
+              alt=""
+              style={{
+                position: "absolute",
+                top: "-30%",
+                width: "30%",
+                height: "110%",
+              }}
+            />
+          )}
+          {one.label}
+        </div>
       </td>
     ));
   };
-
   const DisplayHiddenTableRow = ({ rowData }) => {
     return rowData.map((bet, index) => {
       const selectedBets = betsData.filter((one) => {
         return one[1] === `${bet}`;
       });
+
       return (
         <td
           className={selectedBets.length ? "betTable-chip" : ""}
@@ -181,17 +193,43 @@ const CustomTable = () => {
               <div
                 className={`betTable-header ${
                   numStates.includes("00") && "hover"
-                }`}
+                } ${wheelNumber === "00" && ".wheel-number"} `}
                 onClick={() => placeBets(1, "00", betUnit)}
+                style={{ position: "relative" }}
               >
+                {wheelNumber === `00` && (
+                  <img
+                    src={TipImg}
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      top: "10%",
+                      width: "20%",
+                      height: "40%",
+                    }}
+                  />
+                )}
                 00
               </div>
               <div
                 className={`betTable-header ${
                   numStates.includes(0) && "hover"
-                }`}
+                } ${wheelNumber === "0" && ".wheel-number"} `}
                 onClick={() => placeBets(1, "0", betUnit)}
+                style={{ position: "relative" }}
               >
+                {wheelNumber === `0` && (
+                  <img
+                    src={TipImg}
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      top: "10%",
+                      width: "20%",
+                      height: "40%",
+                    }}
+                  />
+                )}
                 0
               </div>
             </td>
