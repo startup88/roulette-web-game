@@ -10,7 +10,7 @@ import "./index.css";
 
 const Info = () => {
   const {
-    state: { cash, winAmount, betsData },
+    state: { cash, winAmount, betsData, latestNumbers },
     setState,
   } = useHook();
 
@@ -32,7 +32,11 @@ const Info = () => {
           <div className="info-left-values">
             <div className="bet-info">
               <div className="info-child">
-                <RouteltteField title="TOTAL BET" unit="€" value={total} />
+                <RouteltteField
+                  title="TOTAL BET"
+                  unit="€"
+                  value={betsData.reduce((total, one) => total + one[2], 0)}
+                />
               </div>
               <div className="info-child">
                 <RouteltteField
@@ -50,7 +54,11 @@ const Info = () => {
           <div className="info-right-values">
             <div className="numbers-info">
               <div className="latest-numbers">
-                <RouteltteField title="LATEST NUMBERS" numberInfo="1" />
+                <RouteltteField
+                  title="LATEST NUMBERS"
+                  numberInfo="1"
+                  numberArrays={latestNumbers}
+                />
               </div>
               <div className="hot-cold-numbers">
                 <RouteltteField title="HOT AND COLD NUMBERS" numberInfo="2" />
@@ -59,7 +67,7 @@ const Info = () => {
             </div>
             <div className="progress-info">
               <div className="progress-box">
-                <RouteltteField title="RED BLACK" numberInfo="2" />
+                <RouteltteField title="RED|BLACK" numberInfo="2" />
               </div>
               <div className="progress-box">
                 <RouteltteField title="ODD|EVEN" numberInfo="2" />

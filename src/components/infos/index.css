@@ -5,10 +5,10 @@
 .main-content {
   display: flex;
 }
-.info-left-values{
+.info-left-values {
   width: 41.66%;
 }
-.info-right-values{
+.info-right-values {
   width: 58.33%;
 }
 .numbers-info {
@@ -25,6 +25,7 @@
 .progress-info {
   display: flex;
   justify-content: space-between;
+  margin-right: 10px;
 }
 .progress-info .progress-box {
   margin-left: 0.5vw;
@@ -32,40 +33,40 @@
 .progress-box {
   width: 100%;
 }
-.info-child{
+.info-child {
   width: 33.3%;
 }
-@media ( max-width: 1175px )  {
-  .bet-title{
+@media (max-width: 1175px) {
+  .bet-title {
     font-size: 1.5vh;
     font-weight: bold;
   }
 }
 
 @media (max-width: 780px) {
-  .table{
+  .table {
     transform: rotate(90deg);
     scale: 0.65 0.7;
   }
-  .content{
+  .content {
     height: 100%;
     scale: 0.75 1;
   }
-  .info-left-values{
+  .info-left-values {
     float: right;
     order: 2;
     display: block;
     width: 25%;
   }
-  .bet-info{
+  .bet-info {
     top: 50px;
     position: relative;
     display: block;
   }
-  .info-child{
+  .info-child {
     width: 100%;
   }
-  .info-right-values{
+  .info-right-values {
     float: left;
     order: 1;
     width: 75%;

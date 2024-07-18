@@ -4,8 +4,10 @@ export const initialState = {
   cash: 1000,
   wheelNumber: undefined,
   betsData: [],
+  previousBetsData: [],
   winAmount: 0,
   betUnit: 1,
+  latestNumbers: [],
 };
 
 export default (state = initialState, { type, payload }) => {

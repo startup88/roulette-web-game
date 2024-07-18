@@ -8,7 +8,7 @@ import calculateWinning from "../../utils/calculateWinning";
 
 const Controls = () => {
   const {
-    state: { wheelNumber, betsData, cash, latestNumbers },
+    state: { wheelNumber, betsData, cash, latestNumbers, previousBetsData },
     setState,
   } = useHook();
 
@@ -33,7 +33,11 @@ const Controls = () => {
         value: [...latestNumbers, wheelNumber],
       });
       setState({ field: "winAmount", value: newWin });
+      setState({ field: "previousBetsData", value: betsData });
       setState({ field: "betsData", value: [] });
+      setState({ field: "wheelNumber", value: [] });
+    } else if (!betsData.length && previousBetsData.length) {
+      setState({ field: "betsData", value: previousBetsData });
     } else {
       alert("Please input necessary data");
     }
@@ -95,7 +99,11 @@ const Controls = () => {
                   className="button-spin control-spin button-spin-radius"
                   onClick={handleResult}
                 >
-                  <span>SPIN</span>
+                  <span>
+                    {!betsData.length && previousBetsData.length
+                      ? "REBET"
+                      : "SPIN"}
+                  </span>
                 </button>
               </div>
             </div>
