@@ -23,7 +23,7 @@
 .preset-content {
   color: white;
   font-weight: bold;
-  background-image: url("/inputfield.png");
+  background-image: url("../../../assets/images/optionsBg.png");
   background-size: 100% 110%;
   background-repeat: no-repeat;
   background-position: center;
