@@ -14,14 +14,6 @@ const Info = () => {
     setState,
   } = useHook();
 
-  const [total, setTotal] = useState(0);
-
-  useEffect(() => {
-    if (betsData.length) {
-      setTotal(betsData.reduce((total, one) => total + one[2], 0));
-    }
-  }, [betsData]);
-
   return (
     <>
       <div className="main-content">
@@ -44,6 +36,7 @@ const Info = () => {
                   unit="€"
                   value={cash}
                   onChangeCash={setState}
+                  inputDisabled={false}
                 />
               </div>
               <div className="info-child">

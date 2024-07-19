@@ -3,7 +3,14 @@ import React from "react";
 import "./index.css";
 
 const RouteltteField = (props) => {
-  const { title, value, unit, numberInfo, onChangeCash } = props;
+  const {
+    title,
+    value,
+    unit,
+    numberInfo,
+    onChangeCash,
+    inputDisabled = true,
+  } = props;
   const numberArrays = [];
 
   return (
@@ -36,7 +43,7 @@ const RouteltteField = (props) => {
             >
               {numberInfo != 1 ? (
                 <input
-                  type="text"
+                  type="number"
                   value={value}
                   style={{
                     backgroundColor: "transparent",
@@ -47,9 +54,12 @@ const RouteltteField = (props) => {
                     textAlign: "center",
                   }}
                   onChange={(e) => {
-                    onChangeCash({ field: "cash", value: e.target.value });
+                    onChangeCash({
+                      field: "cash",
+                      value: Number(e.target.value),
+                    });
                   }}
-                  // disabled
+                  disabled={inputDisabled}
                 />
               ) : (
                 <>
