@@ -34,7 +34,9 @@
 .main-field {
   /* background-color: #252525; */
   border-radius: 10px;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .contain-hot-cold .main-field {
@@ -53,13 +55,14 @@
   width: 25%;
   text-align: center;
   color: grey;
+  align-content: center;
 }
 .contain .bet-title {
-  position: relative;
+  /* position: relative; */
   top: -10px;
 }
 .contain-latest .bet-title {
-  position: relative;
+  /* position: relative; */
   top: -15px;
 }
 .number {
@@ -82,4 +85,11 @@
 
 .numbers-info .latest-numbers {
   margin-right: 1vw;
+}
+
+.info-content {
+  /* position: relative; */
+  top: -15px;
+  flex-grow: 5;
+  display: flex;
 }

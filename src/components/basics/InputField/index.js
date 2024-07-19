@@ -22,7 +22,9 @@ const InputField = () => {
           >
             WHEEL NUMBER
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div
+            style={{ display: "flex", justifyContent: "center", flexGrow: 5 }}
+          >
             <input
               type="number"
               className="input-field"
@@ -52,6 +54,7 @@ const InputField = () => {
                 border: "none",
                 width: "90%",
                 textAlign: "center",
+                marginBottom: "3%",
               }}
             />
           </div>
