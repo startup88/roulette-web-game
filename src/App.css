@@ -59,7 +59,7 @@ footer {
   border-radius: 5px;
 }
 
-@media (max-width: 780px) {
+/* @media (max-width: 780px) {
   .table {
     transform: rotate(90deg);
     scale: 0.65 1;
@@ -67,4 +67,4 @@ footer {
   .content {
     scale: 0.75 1;
   }
-}
+} */

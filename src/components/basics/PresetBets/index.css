@@ -2,6 +2,7 @@
   display: flex;
   padding: 10px;
   justify-content: center;
+  top: 10%;
 }
 .bet-box {
   margin-right: 1%;

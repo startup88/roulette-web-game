@@ -36,7 +36,7 @@
 .info-child {
   width: 33.3%;
 }
-@media (max-width: 1175px) {
+/* @media (max-width: 1175px) {
   .bet-title {
     font-size: 1.5vh;
     font-weight: bold;
@@ -75,4 +75,4 @@
     top: 200px;
     transform: rotate(90deg);
   }
-}
+} */
