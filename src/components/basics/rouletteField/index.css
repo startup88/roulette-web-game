@@ -11,7 +11,6 @@
 .contain-latest {
   border-radius: 10px;
   color: white;
-  padding: 8px;
   background-image: url("/latestback.png");
   background-size: 100% 110%;
   background-repeat: no-repeat;
@@ -50,6 +49,7 @@
   /* background: linear-gradient(#040404, #1e1e1e); */
   display: flex;
   border-radius: 10px;
+  width: 100%;
 }
 .unit {
   width: 25%;
@@ -92,4 +92,28 @@
   top: -15px;
   flex-grow: 5;
   display: flex;
+}
+
+.latest-numbers-content {
+  display: flex;
+  width: 100%;
+  margin: 0 4% 0 6%;
+}
+.latest-numbers-content div {
+  width: 10%;
+  margin: 0 2%;
+  text-align: center;
+  align-content: center;
+}
+.number-frequency {
+  padding: 0 3%;
+  width: 100%;
+  display: flex;
+  border-radius: 5rem;
+}
+.number-frequency div {
+  border-radius: 3px;
+  text-align: center;
+  align-content: center;
+  margin-bottom: 5px;
 }
