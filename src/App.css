@@ -49,6 +49,16 @@ footer {
   background-position: top left, bottom left;
 }
 
+.modal-body {
+  background: linear-gradient(to top, #000000, #444444);
+}
+.modal-content {
+  border-radius: 7px;
+}
+.modal-body {
+  border-radius: 5px;
+}
+
 @media (max-width: 780px) {
   .table {
     transform: rotate(90deg);

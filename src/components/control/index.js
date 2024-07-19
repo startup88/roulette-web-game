@@ -16,29 +16,24 @@ const Controls = () => {
     if (betsData.length && wheelNumber) {
       const newWin = calculateWinning(betsData, wheelNumber);
       const totalBet = betsData.reduce((total, one) => total + one[2], 0);
-      if (newWin) {
+      setState({ field: "winAmount", value: newWin });
+      setState({ field: "previousBetsData", value: betsData });
+      setState({ field: "showResult", value: true });
+
+      setTimeout(() => {
         setState({
           field: "cash",
           value: cash + newWin - totalBet,
         });
-      } else {
-        const totalBet = betsData.reduce((total, one) => total + one[2], 0);
         setState({
-          field: "cash",
-          value: cash - totalBet,
+          field: "latestNumbers",
+          value: [...latestNumbers, wheelNumber],
         });
-      }
-      setState({
-        field: "latestNumbers",
-        value: [...latestNumbers, wheelNumber],
-      });
-      setState({ field: "winAmount", value: newWin });
-      setState({ field: "previousBetsData", value: betsData });
-
-      setTimeout(() => {
         setState({ field: "betsData", value: [] });
         setState({ field: "wheelNumber", value: undefined });
-      }, 2000);
+        setState({ field: "winAmount", value: 0 });
+        setState({ field: "showResult", value: false });
+      }, 3000);
     } else if (!betsData.length && previousBetsData.length) {
       setState({ field: "betsData", value: previousBetsData });
     } else {

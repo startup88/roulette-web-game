@@ -8,6 +8,9 @@ export const initialState = {
   winAmount: 0,
   betUnit: 1,
   latestNumbers: [],
+
+  //
+  showResult: false,
 };
 
 export default (state = initialState, { type, payload }) => {

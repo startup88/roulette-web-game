@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Modal } from "react-bootstrap";
 
 import Footer from "./components/Footer";
 import TableComponent from "./components/CustomTable";
@@ -7,6 +8,7 @@ import Controls from "./components/control";
 
 import { Provider } from "./store";
 import reducer, { initialState } from "./store/reducers";
+import useHook from "./store/hooks";
 
 import "./App.css";
 const App = () => {
@@ -29,6 +31,28 @@ const App = () => {
     }
   };
 
+  const ModalComponent = () => {
+    const {
+      state: { showResult, betsData, winAmount },
+    } = useHook();
+    return (
+      <Modal
+        show={showResult}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        data-bs-theme="dark"
+      >
+        <Modal.Body data-bs-theme="dark" style={{ textAlign: "center" }}>
+          <b style={{ margin: "1rem" }}>NET WIN</b>
+          <h1>
+            {winAmount - betsData.reduce((total, one) => total + one[2], 0)}
+          </h1>
+        </Modal.Body>
+      </Modal>
+    );
+  };
+
   return (
     <Provider initialState={initialState} reducer={reducer}>
       <div className="main">
@@ -46,6 +70,7 @@ const App = () => {
           </div>
         </div>
       </div>
+      <ModalComponent />
       <Footer />
     </Provider>
   );
