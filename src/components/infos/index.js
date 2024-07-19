@@ -26,21 +26,21 @@ const Info = () => {
               <div className="info-child">
                 <RouteltteField
                   title="TOTAL BET"
-                  unit="€"
+                  unit="$"
                   value={betsData.reduce((total, one) => total + one[2], 0)}
                 />
               </div>
               <div className="info-child">
                 <RouteltteField
                   title="CASH"
-                  unit="€"
+                  unit="$"
                   value={cash}
                   onChangeCash={setState}
                   inputDisabled={false}
                 />
               </div>
               <div className="info-child">
-                <RouteltteField title="WIN" unit="€" value={winAmount} />
+                <RouteltteField title="WIN" unit="$" value={winAmount} />
               </div>
             </div>
           </div>
