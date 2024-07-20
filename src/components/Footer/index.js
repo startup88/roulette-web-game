@@ -46,7 +46,19 @@ const Footer = () => {
         <span data-btn="menu"> </span>
         <span data-btn="son"> </span>
         <span data-btn="red"> </span>
-        <span data-btn="amp"> </span>
+        <span
+          data-btn="amp"
+          onClick={(e) => {
+            toggleFullScreen(document.body);
+            if (e.target.getAttribute("data-btn") == "amp") {
+              e.target.setAttribute("data-btn", "amp-large");
+            } else {
+              e.target.setAttribute("data-btn", "amp");
+            }
+          }}
+        >
+          {" "}
+        </span>
       </div>
       <div className="balance">
         BALANCE <span className="footer-info">${cash}</span>
