@@ -6,6 +6,9 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 import useHook from "../../store/hooks";
 import calculateWinning from "../../utils/calculateWinning";
 
+import LossSound from "../../assets/sounds/loss.wav";
+import WinSound from "../../assets/sounds/win.wav";
+
 const Controls = () => {
   const {
     state: { wheelNumber, betsData, cash, latestNumbers, previousBetsData },
@@ -20,6 +23,14 @@ const Controls = () => {
       setState({ field: "previousBetsData", value: betsData });
       setState({ field: "showResult", value: true });
 
+      const LossSndPlay = new Audio(LossSound);
+      const WinSndPlay = new Audio(WinSound);
+      if (newWin > 0) {
+        WinSndPlay.play();
+      } else {
+        LossSndPlay.play();
+      }
+
       setTimeout(() => {
         setState({
           field: "cash",
@@ -33,7 +44,7 @@ const Controls = () => {
         setState({ field: "wheelNumber", value: undefined });
         setState({ field: "winAmount", value: 0 });
         setState({ field: "showResult", value: false });
-      }, 3000);
+      }, 2000);
     } else if (!betsData.length && previousBetsData.length) {
       setState({ field: "betsData", value: previousBetsData });
     } else {

@@ -20,6 +20,7 @@ import {
 import useHook from "../../store/hooks";
 
 import TipImg from "../../assets/images/tip.png";
+import ChipSound from "../../assets/sounds/chip.wav";
 
 import "./styles.css";
 const CustomTable = () => {
@@ -36,6 +37,8 @@ const CustomTable = () => {
       field: "betsData",
       value: [...betsData, [type, numStr, amount]],
     });
+    const snd = new Audio(ChipSound);
+    snd.play();
     // setBetPlaceData([...betsData, [type, numStr, amount]]);
   };
 
