@@ -46,7 +46,7 @@ const App = () => {
         <Modal.Body data-bs-theme="dark" style={{ textAlign: "center" }}>
           <b style={{ margin: "1rem" }}>NET WIN</b>
           <h1>
-            {winAmount - betsData.reduce((total, one) => total + one[2], 0)}
+            {winAmount - betsData.reduce((total, one) => total + one[2], 0)} $
           </h1>
         </Modal.Body>
       </Modal>
