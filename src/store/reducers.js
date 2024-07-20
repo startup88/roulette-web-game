@@ -2,7 +2,7 @@ import { SET_STATE } from "./actions";
 
 export const initialState = {
   cash: 1000,
-  wheelNumber: undefined,
+  wheelNumber: "",
   betsData: [],
   previousBetsData: [],
   winAmount: 0,

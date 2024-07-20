@@ -30,7 +30,7 @@ const InputField = () => {
               className="input-field"
               min={0}
               max={36}
-              value={Number(wheelNumber)}
+              value={wheelNumber == "" ? "" : Number(wheelNumber)}
               onChange={(e) => {
                 e.persist();
                 let inputValue = e.target.value;
