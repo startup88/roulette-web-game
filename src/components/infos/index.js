@@ -3,6 +3,7 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 
 import RouteltteField from "../basics/rouletteField";
 import InputField from "../basics/InputField";
+import HotColdField from "../basics/HotColdField";
 
 import useHook from "../../store/hooks";
 
@@ -54,7 +55,8 @@ const Info = () => {
                 />
               </div>
               <div className="hot-cold-numbers">
-                <RouteltteField title="HOT AND COLD NUMBERS" />
+                <HotColdField />
+                {/* <RouteltteField title="HOT AND COLD NUMBERS" /> */}
               </div>
               <div></div>
             </div>
