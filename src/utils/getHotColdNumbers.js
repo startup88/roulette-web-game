@@ -20,10 +20,8 @@ function getNumberFrequencies(spinResults) {
 export default function getHotAndColdNumbers(spinResults, topN = 5) {
   const frequencies = getNumberFrequencies(spinResults);
 
-  console.log("1111", frequencies);
   // Convert frequencies object to an array of [number, frequency] pairs
   const frequencyArray = Object.entries(frequencies);
-  console.log("222", frequencyArray);
 
   // Sort array based on frequency, descending
   frequencyArray.sort((a, b) => 0.5 - Math.random());
@@ -43,8 +41,6 @@ export default function getHotAndColdNumbers(spinResults, topN = 5) {
     number: entry[0],
     count: entry[1],
   }));
-
-  console.log("####", hotNumbers, coldNumbers);
 
   return { hotNumbers, coldNumbers };
 }
