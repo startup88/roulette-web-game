@@ -27,6 +27,7 @@ export default (betsData, wheelNumber) => {
   betsData.forEach((bet) => {
     if (bet[1].split(",").includes(`${wheelNumber}`)) {
       result += ResolveWinning(bet[0], bet[2]);
+      result += bet[2]; // returning bet amount if win
     }
   });
   return result;
