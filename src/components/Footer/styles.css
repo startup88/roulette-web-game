@@ -25,6 +25,10 @@ footer .actions span {
 .actions [data-btn="amp"] {
   background-position-x: -120px;
 }
+
+.actions [data-btn="amp-large"] {
+  background-position-x: -90px;
+}
 footer [data-btn] {
   display: inline-block;
   text-align: center;
