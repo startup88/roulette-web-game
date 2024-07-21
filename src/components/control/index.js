@@ -32,7 +32,7 @@ const Controls = () => {
                 onClick={() => {
                   setState({ field: "betsData", value: [] });
                 }}
-                style={{ visibility: betsData.length ? "visible" : "hidden" }}
+                disabled={betsData.length == 0}
               >
                 <span>CLEAR</span>
               </button>
@@ -43,7 +43,7 @@ const Controls = () => {
                   tempData.pop(); //remove the last bet
                   setState({ field: "betsData", value: tempData });
                 }}
-                style={{ visibility: betsData.length ? "visible" : "hidden" }}
+                disabled={betsData.length == 0}
               >
                 <span>UNDO</span>
               </button>
@@ -58,17 +58,18 @@ const Controls = () => {
                   ]);
                   setState({ field: "betsData", value: tempData });
                 }}
-                style={{ visibility: betsData.length ? "visible" : "hidden" }}
+                disabled={betsData.length == 0}
               >
                 <span>DOUBLE</span>
               </button>
               <button
                 className="control-button"
                 onClick={handleRebet}
-                style={{
-                  visibility:
-                    previousBetsData.length > 0 ? "visible" : "hidden",
-                }}
+                disabled={previousBetsData.length == 0}
+                // style={{
+                //   visibility:
+                //     previousBetsData.length > 0 ? "visible" : "hidden",
+                // }}
               >
                 <span>REBET</span>
               </button>
