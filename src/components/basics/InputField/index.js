@@ -76,6 +76,11 @@ const InputField = () => {
               min={0}
               max={36}
               value={wheelNumber == "" ? "" : Number(wheelNumber)}
+              onKeyUp={(e) => {
+                if (e.key === "Enter" || e.keyCode === 13) {
+                  onSpin();
+                }
+              }}
               onChange={(e) => {
                 e.persist();
                 let inputValue = e.target.value;
