@@ -81,7 +81,7 @@
   padding-top: 1.5% !important;
 }
 
-.betTable-chip .hidden-td {
+.hidden-td {
   border: none !important;
   visibility: hidden;
 }
