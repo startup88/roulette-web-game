@@ -1,20 +1,13 @@
 .contain {
   border-radius: 10px;
   color: white;
-  background-image: url("/inputfield.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
-
+  background: linear-gradient(to top, #000000, #444444);
   height: calc(0.075 * (100vh - 30px));
 }
 .contain-latest {
   border-radius: 10px;
+  background: linear-gradient(to top, #000000, #444444);
   color: white;
-  background-image: url("/latestback.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
 
   height: calc(0.075 * (100vh - 30px));
 }
@@ -22,10 +15,7 @@
   border-radius: 10px;
   color: white;
   padding: 3px;
-  background-image: url("/hotcold.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: linear-gradient(to top, #000000, #444444);
 
   height: calc(0.075 * (100vh - 30px));
 }
@@ -101,19 +91,22 @@
 }
 .latest-numbers-content div {
   width: 10%;
-  margin: 0 2%;
+  margin: 2%;
+  border-radius: 0.2rem;
   text-align: center;
   align-content: center;
+  background: linear-gradient(to top, #9a9a9a, #ffffff);
 }
 .number-frequency {
-  padding: 0 3%;
+  margin: 2%;
   width: 100%;
   display: flex;
-  border-radius: 5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom, #000000, #1f1f1f);
 }
 .number-frequency div {
   border-radius: 3px;
   text-align: center;
   align-content: center;
-  margin-bottom: 5px;
+  border-radius: 0.5rem;
 }

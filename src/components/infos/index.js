@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import React from "react";
 
 import RouteltteField from "../basics/rouletteField";
 import InputField from "../basics/InputField";

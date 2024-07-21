@@ -28,6 +28,9 @@
 
   position: absolute;
   inset: 0;
+
+  border-collapse: separate;
+  border-spacing: 0;
 }
 .betTable-main tr {
   height: 20%;
@@ -160,4 +163,22 @@
 
 .betTable-hidden-header {
   width: 4.8vw !important;
+}
+
+tr:first-child td:first-child {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+tr:first-child td:last-child {
+  border-top-right-radius: 0.5rem;
+}
+tr:nth-child(3) td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+
+tr:last-child td:nth-child(2) {
+  border-bottom-left-radius: 0.5rem;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
 }

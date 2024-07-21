@@ -17,7 +17,6 @@ const HotColdField = () => {
     setHotData(hotNumbers);
     setColdData(coldNumbers);
   }, [latestNumbers]);
-  // const coldData = [4, 5, 6, 7, 8];
   return (
     <div className="hotcoldfield">
       <div className="hotcoldfield-title">HOT AND COLD NUMBERS</div>

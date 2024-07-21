@@ -1,9 +1,8 @@
 .input-content {
-  background-image: url("/bet.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: linear-gradient(to top, #000000, #444444);
   height: 100%;
+  display: flex;
+  border-radius: 0.5rem;
 }
 .main-input {
   color: white;
@@ -11,9 +10,29 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  width: 60%;
+  /* height: 60%; */
 }
-.input-field:focus {
-  outline: none;
+.main-button {
+  width: 40%;
+  text-align: center;
+  align-content: flex-end;
+}
+.main-button button {
+  width: 80%;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  background-color: #585858;
+  color: white;
+  margin-bottom: 3px;
+  height: 60%;
+}
+.input-content .input-field {
+  background: linear-gradient(to top, #d5eff9, #f9fcfd);
+  border-radius: 0.5rem;
+}
+.main-button button:hover {
+  background: linear-gradient(to top, #555555, #bebebe);
 }
 
 input[type="number"]::-webkit-outer-spin-button,

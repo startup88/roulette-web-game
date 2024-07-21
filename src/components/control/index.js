@@ -4,52 +4,15 @@ import "./index.css";
 import { Container, Row, Col, Image } from "react-bootstrap";
 
 import useHook from "../../store/hooks";
-import calculateWinning from "../../utils/calculateWinning";
-
-import LossSound from "../../assets/sounds/loss.wav";
-import WinSound from "../../assets/sounds/win.wav";
 
 const Controls = () => {
   const {
-    state: { wheelNumber, betsData, cash, latestNumbers, previousBetsData },
+    state: { betsData, previousBetsData },
     setState,
   } = useHook();
 
-  const handleResult = () => {
-    if (betsData.length && wheelNumber) {
-      const newWin = calculateWinning(betsData, wheelNumber);
-      const totalBet = betsData.reduce((total, one) => total + one[2], 0);
-      setState({ field: "winAmount", value: newWin });
-      setState({ field: "previousBetsData", value: betsData });
-      setState({ field: "showResult", value: true });
-
-      const LossSndPlay = new Audio(LossSound);
-      const WinSndPlay = new Audio(WinSound);
-      if (newWin > 0) {
-        WinSndPlay.play();
-      } else {
-        LossSndPlay.play();
-      }
-
-      setTimeout(() => {
-        setState({
-          field: "cash",
-          value: cash + newWin - totalBet,
-        });
-        setState({
-          field: "latestNumbers",
-          value: [...latestNumbers, wheelNumber],
-        });
-        setState({ field: "betsData", value: [] });
-        setState({ field: "wheelNumber", value: undefined });
-        setState({ field: "winAmount", value: 0 });
-        setState({ field: "showResult", value: false });
-      }, 2000);
-    } else if (!betsData.length && previousBetsData.length) {
-      setState({ field: "betsData", value: previousBetsData });
-    } else {
-      alert("Please input necessary data");
-    }
+  const handleRebet = () => {
+    setState({ field: "betsData", value: previousBetsData });
   };
 
   return (
@@ -99,7 +62,14 @@ const Controls = () => {
               >
                 <span>DOUBLE</span>
               </button>
-              <button className="control-button" onClick={handleResult}>
+              <button
+                className="control-button"
+                onClick={handleRebet}
+                style={{
+                  visibility:
+                    previousBetsData.length > 0 ? "visible" : "hidden",
+                }}
+              >
                 <span>REBET</span>
               </button>
             </div>
