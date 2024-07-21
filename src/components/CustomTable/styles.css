@@ -76,7 +76,12 @@
   cursor: default;
 }
 
-.hidden-td {
+.betTable-hidden tr:first-child .betTable-chip {
+  background-position: center 90%;
+  padding-top: 1.5% !important;
+}
+
+.betTable-chip .hidden-td {
   border: none !important;
   visibility: hidden;
 }
