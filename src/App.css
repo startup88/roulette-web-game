@@ -42,11 +42,7 @@ footer {
 
 .content {
   /* height: 70vh; */
-  background-image: url("./assets/images/background.png"),
-    url("./assets/images/grey_back.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat, no-repeat;
-  background-position: top left, bottom left;
+  background-color: #669933;
 }
 
 .modal-body {

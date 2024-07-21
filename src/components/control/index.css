@@ -1,144 +1,36 @@
 .controls-content {
-  font-size: 18px;
   display: flex;
   justify-content: center;
+  padding: 2rem;
 
-  background: url(../../assets/images/grey_back.png) no-repeat center;
-  background-size: 100% 100%;
+  /* background: url(../../assets/images/grey_back.png) no-repeat center; */
+  /* background-size: 100% 100%; */
   /* linear-gradient(to top, #0000ff, rgb(255 255 255/ 0%)); */
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
 }
 
 .control-box {
   width: 100%;
   margin-right: 10px;
 }
-.control-box1 {
-  width: 80%;
-}
-.control-clear {
-  background-image: url("/clean3.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: black;
-
-  font-weight: bold;
-}
-.control-clear:hover {
-  background-image: url("/clear1.png");
-}
-.control-clear:focus {
-  background-image: url("/clear2.png");
-}
-.control-button {
-  max-width: 25%;
-  margin-right: 6%;
-  border-radius: 100%;
-  border: none;
-  width: 100px;
-  height: 100px;
-  margin: auto;
-}
-.control-button:focus {
-  border: none;
-}
-.button-spin {
-  max-width: 100%;
-  border: none;
-  margin-right: 6%;
-  font-size: 14px;
-  width: 100px;
-  height: 100px;
-}
-.button-spin-radius {
-  border-radius: 50%;
-}
-.button-auto-radius {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.control-undo {
-  background-image: url("/undo3.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: black;
-  font-weight: bold;
-}
-.control-undo:hover {
-  background-image: url("/undo2.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: black;
-  font-weight: bold;
-}
-.control-undo:focus {
-  background-image: url("/undo1.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: black;
-  font-weight: bold;
-}
-.control-double {
-  background-image: url("/double2.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: black;
-  font-weight: bold;
-}
-.control-double:hover {
-  background-image: url("/double3.png");
-}
-.control-double:focus {
-  background-image: url("/double1.png");
-}
-.control-auto {
-  background-image: url("/autospin.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: black;
-  font-weight: bold;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-}
-.control-auto:focus {
-  background-image: url("/autospin2.png");
-}
-.control-spin {
-  background-image: url("/spin2.png");
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: black;
-  font-weight: bold;
-  position: relative;
-  top: -25%;
-}
-.control-spin:hover {
-  background-image: url("/spin1.png");
-}
-.control-spin:focus {
-  background-image: url("/spin3.png");
-}
 .button-control-box {
+  height: 80%;
+  border-radius: 0.5rem;
+  background: linear-gradient(to top, #000000, #444444);
   display: flex;
-  height: 100%;
-}
-.button-control-box span {
-  text-align: end;
-  position: relative;
-  top: 10px;
-  font-size: 14px;
+  justify-content: space-around;
+  padding: 3%;
 }
 
-.auto-spin {
-  width: 70%;
-  font-size: 12px;
-  font-weight: 900;
+.control-button {
+  font-weight: bold;
+  width: 20%;
+  border: none;
+  margin: auto;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+.control-button:hover {
+  border: none;
+  background: linear-gradient(to top, #555555, #bebebe);
 }

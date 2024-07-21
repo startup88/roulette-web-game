@@ -31,7 +31,7 @@ const Info = () => {
                   value={betsData.reduce((total, one) => total + one[2], 0)}
                 />
               </div>
-              <div className="info-child">
+              <div className="info-child" style={{ margin: "0 1%" }}>
                 <RouteltteField
                   title="CASH"
                   unit="$"

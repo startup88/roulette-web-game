@@ -62,11 +62,10 @@ const Controls = () => {
               <PresetBet />
             </div>
           </Col>
-          <Col sm="1"></Col>
-          <Col sm="5">
+          <Col sm="4" style={{ alignContent: "end" }}>
             <div className="button-control-box">
               <button
-                className="control-button control-clear"
+                className="control-button"
                 onClick={() => {
                   setState({ field: "betsData", value: [] });
                 }}
@@ -75,7 +74,7 @@ const Controls = () => {
                 <span>CLEAR</span>
               </button>
               <button
-                className="control-button control-undo"
+                className="control-button"
                 onClick={() => {
                   const tempData = [...betsData];
                   tempData.pop(); //remove the last bet
@@ -86,7 +85,7 @@ const Controls = () => {
                 <span>UNDO</span>
               </button>
               <button
-                className="control-button control-double"
+                className="control-button"
                 onClick={() => {
                   let tempData = [...betsData];
                   tempData = tempData.map((one) => [
@@ -100,23 +99,9 @@ const Controls = () => {
               >
                 <span>DOUBLE</span>
               </button>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <button className="button-spin control-auto button-auto-radius">
-                  <p className="auto-spin" style={{ visibility: "hidden" }}>
-                    AUTO SPIN
-                  </p>
-                </button>
-                <button
-                  className="button-spin control-spin button-spin-radius"
-                  onClick={handleResult}
-                >
-                  <span>
-                    {!betsData.length && previousBetsData.length
-                      ? "REBET"
-                      : "SPIN"}
-                  </span>
-                </button>
-              </div>
+              <button className="control-button" onClick={handleResult}>
+                <span>REBET</span>
+              </button>
             </div>
           </Col>
         </Row>
