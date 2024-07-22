@@ -50,26 +50,10 @@ const InputField = () => {
 
   return (
     <>
-      <div className="input-content">
-        <div className="main-input">
-          <div
-            style={{
-              position: "relative",
-              display: "flex",
-              justifyContent: "center",
-              textAlign: "center",
-            }}
-          >
-            WHEEL NUMBER
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              flexGrow: 5,
-              height: "60%",
-            }}
-          >
+      <div className="wheel-number">
+        <div className="wheel-number-title">WHEEL NUMBER</div>
+        <div className="wheel-number-content">
+          <div className="wheel-number-input">
             <input
               type="number"
               className="input-field"
@@ -97,20 +81,11 @@ const InputField = () => {
 
                 setState({ field: "wheelNumber", value: `${inputValue}` });
               }}
-              style={{
-                backgroundColor: "transparent",
-                color: "#000000",
-                fontWeight: "bold",
-                border: "none",
-                width: "90%",
-                textAlign: "center",
-                marginBottom: "3%",
-              }}
             />
           </div>
-        </div>
-        <div className="spin-button">
-          <button onClick={onSpin}>GO</button>
+          <div className="spin-button">
+            <button onClick={onSpin}>GO</button>
+          </div>
         </div>
       </div>
     </>

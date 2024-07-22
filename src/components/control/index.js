@@ -25,7 +25,8 @@ const Controls = () => {
               <PresetBet />
             </div>
           </Col>
-          <Col sm="4" style={{ alignContent: "end" }}>
+
+          <Col sm="4" style={{ marginLeft: "1rem", alignContent: "end" }}>
             <div className="button-control-box">
               <button
                 className="control-button"

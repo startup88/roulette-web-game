@@ -136,8 +136,8 @@
 }
 
 .betTable-hidden tr td {
-  border: 1px solid cyan;
-  /* border: none; */
+  /* border: 1px solid cyan; */
+  border: none;
   width: 3.21vw;
   padding: 0;
   color: white;

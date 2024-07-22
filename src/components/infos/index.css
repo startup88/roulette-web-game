@@ -1,78 +1,31 @@
-.bet-info {
-  display: flex;
-  padding: 10px;
-}
-.main-content {
-  display: flex;
-}
-.info-left-values {
-  width: 41.66%;
-}
-.info-right-values {
-  width: 58.33%;
-}
-.numbers-info {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-}
-.latest-numbers {
-  width: 40%;
-}
-.hot-cold-numbers {
-  width: 40%;
-}
-.progress-info {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 10px;
-}
-.progress-info .progress-box {
-  margin-left: 0.5vw;
-}
-.progress-box {
-  width: 100%;
-}
-.info-child {
-  width: 33.3%;
-}
-/* @media (max-width: 1175px) {
-  .bet-title {
-    font-size: 1.5vh;
-    font-weight: bold;
-  }
+.info-content {
+  width: 90%;
+  margin: auto;
+  padding-top: 1%;
 }
 
-@media (max-width: 780px) {
-  .table {
-    transform: rotate(90deg);
-    scale: 0.65 0.7;
-  }
-  .content {
-    height: 100%;
-    scale: 0.75 1;
-  }
-  .info-left-values {
-    float: right;
-    order: 2;
-    display: block;
-    width: 25%;
-  }
-  .bet-info {
-    top: 50px;
-    position: relative;
-    display: block;
-  }
-  .info-child {
-    width: 100%;
-  }
-  .info-right-values {
-    float: left;
-    order: 1;
-    width: 75%;
-    position: relative;
-    left: -250px;
-    top: 200px;
-    transform: rotate(90deg);
-  }
-} */
+.bet-info {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 3%;
+}
+
+.bet-rate {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 3%;
+  margin-top: 1%;
+}
+.bet-rate .progress-box {
+  width: 49.5%;
+  /* margin: 1%; */
+}
+
+div[class*="col-"] {
+  padding: 0;
+}
+.latest-numbers {
+}
+.hot-cold-numbers {
+  margin-top: 2%;
+}

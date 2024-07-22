@@ -1,40 +1,67 @@
-.input-content {
+.wheel-number {
   background: linear-gradient(to top, #000000, #444444);
   height: 100%;
-  display: flex;
   border-radius: 0.5rem;
+  color: white;
+  padding: 7%;
+  align-content: space-evenly;
 }
-.main-input {
+.wheel-number-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+/* 
+
+ style={{
+                backgroundColor: "transparent",
+                color: "#000000",
+                fontWeight: "bold",
+                border: "none",
+                width: "90%",
+                textAlign: "center",
+                marginBottom: "3%",
+              }}
+*/
+.wheel-number-content {
   color: white;
   font-weight: bold;
-  height: 100%;
   display: flex;
-  flex-direction: column;
+}
+.wheel-number-input {
   width: 60%;
-  /* height: 60%; */
+}
+.wheel-number-input input {
+  width: 100%;
+  border: none;
+  text-align: center;
+  font-weight: 500;
 }
 .spin-button {
-  width: 40%;
   text-align: center;
   align-content: flex-end;
+  width: 40%;
+  padding-left: 5%;
 }
 .spin-button button {
-  width: 80%;
-  border-radius: 0.5rem;
+  width: 100%;
+  border-radius: 0.3rem;
   font-weight: 500;
   background-color: #585858;
   color: white;
   margin-bottom: 3px;
-  height: 60%;
   border: none;
 }
 .spin-button button:hover {
   background: linear-gradient(to top, #555555, #bebebe);
 }
 
-.input-content .input-field {
+.wheel-number .input-field {
   background: linear-gradient(to top, #d5eff9, #f9fcfd);
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
