@@ -30,15 +30,18 @@
   color: white;
   font-weight: bold;
   display: flex;
+  height: 30%;
 }
 .wheel-number-input {
   width: 60%;
+  height: 100%;
 }
 .wheel-number-input input {
   width: 100%;
   border: none;
   text-align: center;
   font-weight: 500;
+  height: 100%;
 }
 .spin-button {
   text-align: center;
@@ -54,6 +57,7 @@
   color: white;
   margin-bottom: 3px;
   border: none;
+  height: 100%;
 }
 .spin-button button:hover {
   background: linear-gradient(to top, #555555, #bebebe);
