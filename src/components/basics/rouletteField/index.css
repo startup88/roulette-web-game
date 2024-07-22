@@ -1,18 +1,18 @@
 .contain {
-  border-radius: 10px;
+  border-radius: 0.5rem;
   color: white;
   background: linear-gradient(to top, #000000, #444444);
   height: calc(0.075 * (100vh - 30px));
 }
 .contain-latest {
-  border-radius: 10px;
+  border-radius: 0.5rem;
   background: linear-gradient(to top, #000000, #444444);
   color: white;
 
   height: calc(0.075 * (100vh - 30px));
 }
 .contain-hot-cold {
-  border-radius: 10px;
+  border-radius: 0.5rem;
   color: white;
   padding: 3px;
   background: linear-gradient(to top, #000000, #444444);
@@ -22,7 +22,7 @@
 
 .main-field {
   /* background-color: #252525; */
-  border-radius: 10px;
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -38,7 +38,7 @@
 .value {
   /* background: linear-gradient(#040404, #1e1e1e); */
   display: flex;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   width: 100%;
 }
 .unit {
@@ -105,8 +105,7 @@
   background: linear-gradient(to bottom, #000000, #1f1f1f);
 }
 .number-frequency div {
-  border-radius: 3px;
   text-align: center;
   align-content: center;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
 }

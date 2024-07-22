@@ -49,10 +49,10 @@ footer {
   background: linear-gradient(to top, #000000, #444444);
 }
 .modal-content {
-  border-radius: 7px;
+  border-radius: 0.5rem;
 }
 .modal-body {
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 /* @media (max-width: 780px) {
