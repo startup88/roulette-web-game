@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import RouteltteField from "../basics/rouletteField";
 import InputField from "../basics/InputField";
@@ -13,6 +13,10 @@ const Info = () => {
     state: { cash, winAmount, betsData, latestNumbers },
     setState,
   } = useHook();
+
+  useEffect(() => {
+    latestNumbers.reverse();
+  }, [latestNumbers]);
 
   return (
     <>
