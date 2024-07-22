@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
+import _ from "lodash";
+
 import RouteltteField from "../basics/rouletteField";
 import InputField from "../basics/InputField";
 import HotColdField from "../basics/HotColdField";
@@ -13,10 +15,6 @@ const Info = () => {
     state: { cash, winAmount, betsData, latestNumbers },
     setState,
   } = useHook();
-
-  useEffect(() => {
-    latestNumbers.reverse();
-  }, [latestNumbers]);
 
   return (
     <>
@@ -64,7 +62,7 @@ const Info = () => {
             <RouteltteField
               title="LATEST NUMBERS"
               numberInfo="1"
-              numberArrays={latestNumbers}
+              numberArrays={_.reverse(latestNumbers)}
             />
           </div>
           <div className={"hot-cold-numbers"}>
