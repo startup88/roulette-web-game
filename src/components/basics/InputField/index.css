@@ -13,12 +13,12 @@
   width: 60%;
   /* height: 60%; */
 }
-.main-button {
+.spin-button {
   width: 40%;
   text-align: center;
   align-content: flex-end;
 }
-.main-button button {
+.spin-button button {
   width: 80%;
   border-radius: 0.5rem;
   font-weight: 500;
@@ -26,13 +26,15 @@
   color: white;
   margin-bottom: 3px;
   height: 60%;
+  border: none;
 }
+.spin-button button:hover {
+  background: linear-gradient(to top, #555555, #bebebe);
+}
+
 .input-content .input-field {
   background: linear-gradient(to top, #d5eff9, #f9fcfd);
   border-radius: 0.5rem;
-}
-.main-button button:hover {
-  background: linear-gradient(to top, #555555, #bebebe);
 }
 
 input[type="number"]::-webkit-outer-spin-button,

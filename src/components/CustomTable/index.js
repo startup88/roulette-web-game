@@ -81,8 +81,8 @@ const CustomTable = () => {
               alt=""
               style={{
                 position: "absolute",
-                top: "-30%",
-                width: "30%",
+                top: "-2  0%",
+                width: "40%",
                 height: "110%",
               }}
             />

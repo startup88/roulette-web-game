@@ -109,7 +109,7 @@ const InputField = () => {
             />
           </div>
         </div>
-        <div className="main-button">
+        <div className="spin-button">
           <button onClick={onSpin}>GO</button>
         </div>
       </div>
