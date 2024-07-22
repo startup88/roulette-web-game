@@ -1,4 +1,6 @@
 import React from "react";
+import Select from "react-select";
+
 import "./index.css";
 
 import useHook from "../../../store/hooks";
@@ -6,6 +8,8 @@ import calculateWinning from "../../../utils/calculateWinning";
 
 import LossSound from "../../../assets/sounds/loss.wav";
 import WinSound from "../../../assets/sounds/win.wav";
+
+import options from "./data";
 
 const InputField = () => {
   const {
@@ -54,7 +58,15 @@ const InputField = () => {
         <div className="wheel-number-title">WHEEL NUMBER</div>
         <div className="wheel-number-content">
           <div className="wheel-number-input">
-            <input
+            <Select
+              value={{ value: wheelNumber }}
+              onChange={(val) => {
+                console.log("5555", val);
+              }}
+              options={options}
+            />
+
+            {/* <input
               type="number"
               className="input-field"
               min={0}
@@ -81,7 +93,7 @@ const InputField = () => {
 
                 setState({ field: "wheelNumber", value: `${inputValue}` });
               }}
-            />
+            /> */}
           </div>
           <div className="spin-button">
             <button onClick={onSpin}>GO</button>
