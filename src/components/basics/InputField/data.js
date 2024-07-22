@@ -24,10 +24,6 @@ export default [
     label: "4",
   },
   {
-    value: "00",
-    label: "00",
-  },
-  {
     value: "5",
     label: "5",
   },

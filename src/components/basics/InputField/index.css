@@ -30,11 +30,13 @@
   color: white;
   font-weight: bold;
   display: flex;
-  height: 30%;
+  /* height: 30%; */
 }
 .wheel-number-input {
   width: 60%;
   height: 100%;
+  z-index: 100;
+  color: black;
 }
 .wheel-number-input input {
   width: 100%;
@@ -72,8 +74,4 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.css-1nmdiq5-menu {
-  z-index: 100;
 }

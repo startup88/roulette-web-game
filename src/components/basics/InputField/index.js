@@ -59,9 +59,10 @@ const InputField = () => {
         <div className="wheel-number-content">
           <div className="wheel-number-input">
             <Select
-              value={{ value: wheelNumber }}
+              value={{ label: wheelNumber, value: wheelNumber }}
               onChange={(val) => {
                 console.log("5555", val);
+                setState({ field: "wheelNumber", value: `${val.value}` });
               }}
               options={options}
             />
