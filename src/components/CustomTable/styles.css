@@ -41,7 +41,9 @@
   width: 7.143%;
   /* height: 6.25vw; */
   background-color: transparent;
-  border: 0.5px solid whitesmoke;
+  /* border: 0.5px solid whitesmoke; */
+  border-right: 0.5px solid whitesmoke;
+  border-top: 0.5px solid whitesmoke;
 
   align-content: center;
   text-align: center;
@@ -54,23 +56,27 @@
 }
 .betTable-zeros > div {
   height: 50%;
-  border-bottom: 1px solid whitesmoke;
 
   text-align: center;
   align-content: center;
 }
+.betTable-zeros div:first-child {
+  border-bottom: 0.5px solid whitesmoke;
+}
+
 .betTable-zeros > .betTable-header:hover {
   background: url(../../assets/images/zero_hover.png) no-repeat center;
-  background-size: 100% 100%;
+  background-size: 101% 101%;
 }
 .betTable-zeros > .betTable-header.hover {
   background: url(../../assets/images/zero_hover.png) no-repeat center;
-  background-size: 100% 100%;
+  background-size: 101% 101%;
 }
 
 .betTable-chip {
   font-size: 1rem;
   background: url(../../assets/images/chip.png) no-repeat center;
+  background-position-y: 60%;
   background-size: 3.2vw;
   height: 3vw;
   cursor: default;
@@ -87,21 +93,21 @@
 }
 .td-red {
   background: url(../../assets/images/red.png) no-repeat center;
-  background-size: 100% 100%;
+  background-size: 102% 102%;
 }
 .td-red:hover,
 .td-red.hover {
   background: url(../../assets/images/red_hover.png) no-repeat center;
-  background-size: 100% 100%;
+  background-size: 101% 101%;
 }
 .td-black {
   background: url(../../assets/images/black.png) no-repeat center;
-  background-size: 100% 100%;
+  background-size: 104% 102%;
 }
 .td-black:hover,
 .td-black.hover {
   background: url(../../assets/images/black_hover.png) no-repeat center;
-  background-size: 100% 100%;
+  background-size: 104% 101%;
 }
 .td-row {
   font-size: 1.3rem;
@@ -117,12 +123,16 @@
 .betTable-black-diamond.betTable-chip {
   background: url(../../assets/images/chip.png) no-repeat center,
     url(../../assets/images/black_diamond.png) no-repeat center;
-  background-size: 2.5vw, 80% !important;
+  background-size: 3.2vw, 80% !important;
+  background-position-y: 60%;
+  /* background-size: 3.2vw; */
 }
 .betTable-red-diamond.betTable-chip {
   background: url(../../assets/images/chip.png) no-repeat center,
     url(../../assets/images/red_diamond.png) no-repeat center;
-  background-size: 2.5vw, 80% !important;
+  background-size: 3.2vw, 80% !important;
+  background-position-y: 60%;
+  /* background-size: 3.2vw; */
 }
 
 .betTable-hidden {
@@ -180,6 +190,11 @@
   padding-left: 1.8% !important;
 }
 
+.betTable-main tr:first-child td:first-child {
+  border-left: 0.5px solid whitesmoke;
+  border-bottom: 0.5px solid whitesmoke;
+}
+
 tr:first-child td:first-child {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -187,12 +202,20 @@ tr:first-child td:first-child {
 tr:first-child td:last-child {
   border-top-right-radius: 0.5rem;
 }
-tr:nth-child(3) td:last-child {
+.betTable-main tr:nth-child(3) td:last-child {
   border-bottom-right-radius: 0.5rem;
+  border-bottom: 0.5px solid whitesmoke;
+}
+.betTable-main tr:nth-child(4) td:nth-child(2) {
+  border-left: 0.5px solid whitesmoke;
+}
+.betTable-main tr:last-child td {
+  border-bottom: 0.5px solid whitesmoke;
 }
 
-tr:last-child td:nth-child(2) {
+.betTable-main tr:last-child td:nth-child(2) {
   border-bottom-left-radius: 0.5rem;
+  border-left: 0.5px solid whitesmoke;
 }
 tr:last-child td:last-child {
   border-bottom-right-radius: 0.5rem;

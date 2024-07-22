@@ -182,8 +182,8 @@ const CustomTable = () => {
     <div className="betTable">
       <table
         className="betTable-main"
-        cellPadding={1}
-        cellSpacing={1}
+        // cellPadding={1}
+        // cellSpacing={1}
         // height={100}
       >
         <tbody>
