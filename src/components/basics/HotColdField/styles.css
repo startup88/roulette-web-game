@@ -3,7 +3,7 @@
   background: linear-gradient(to top, #000000, #444444);
   color: white;
 
-  height: calc(0.075 * (100vh - 30px));
+  height: calc(0.08 * (100vh - 30px));
 
   display: flex;
   flex-direction: column;
