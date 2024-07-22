@@ -62,7 +62,9 @@ const Info = () => {
             <RouteltteField
               title="LATEST NUMBERS"
               numberInfo="1"
-              numberArrays={_.reverse(latestNumbers)}
+              numberArrays={latestNumbers.map(
+                (item, idx) => latestNumbers[latestNumbers.length - 1 - idx]
+              )}
             />
           </div>
           <div className={"hot-cold-numbers"}>
