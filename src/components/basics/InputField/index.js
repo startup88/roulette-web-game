@@ -62,7 +62,6 @@ const InputField = () => {
               value={{ label: wheelNumber, value: wheelNumber }}
               isSearchable={false}
               onChange={(val) => {
-                console.log("5555", val);
                 setState({ field: "wheelNumber", value: `${val.value}` });
               }}
               options={options}
