@@ -44,14 +44,14 @@ const App = () => {
         data-bs-theme="dark"
       >
         <Modal.Body data-bs-theme="dark" style={{ textAlign: "center" }}>
+          <b style={{ fontSize: "larger" }}>WIN</b>
+          <h1>{winAmount} $</h1>
           <div className="result-modal-win">
-            <b style={{ margin: "1rem" }}>WIN</b>
-            <p style={{ fontSize: "larger" }}>{winAmount} $</p>
+            <b>NET WIN</b>
+            <p>
+              {winAmount - betsData.reduce((total, one) => total + one[2], 0)} $
+            </p>
           </div>
-          <b style={{ margin: "1rem" }}>NET WIN</b>
-          <h1>
-            {winAmount - betsData.reduce((total, one) => total + one[2], 0)} $
-          </h1>
         </Modal.Body>
       </Modal>
     );
