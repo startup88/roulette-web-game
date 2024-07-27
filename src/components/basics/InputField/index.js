@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import { DropdownButton, Dropdown } from "react-bootstrap";
 
 import "./index.css";
 
@@ -13,7 +14,7 @@ import options from "./data";
 
 const InputField = () => {
   const {
-    state: { wheelNumber, betsData, cash, latestNumbers },
+    state: { wheelNumber, betsData, cash, latestNumbers, showDetail },
     setState,
   } = useHook();
 
@@ -54,20 +55,21 @@ const InputField = () => {
 
   return (
     <>
-      <div className="wheel-number">
-        <div className="wheel-number-title">WHEEL NUMBER</div>
-        <div className="wheel-number-content">
-          <div className="wheel-number-input">
-            <Select
-              value={{ label: wheelNumber, value: wheelNumber }}
-              isSearchable={false}
-              onChange={(val) => {
-                setState({ field: "wheelNumber", value: `${val.value}` });
-              }}
-              options={options}
-            />
+      <div className={`wheel-number ${showDetail ? "expanded" : "default"}`}>
+        <div className="wheel-number-main">
+          <div className="wheel-number-title">WHEEL NUMBER</div>
+          <div className="wheel-number-content">
+            <div className="wheel-number-input">
+              <Select
+                value={{ label: wheelNumber, value: wheelNumber }}
+                isSearchable={false}
+                onChange={(val) => {
+                  setState({ field: "wheelNumber", value: `${val.value}` });
+                }}
+                options={options}
+              />
 
-            {/* <input
+              {/* <input
               type="number"
               className="input-field"
               min={0}
@@ -95,10 +97,22 @@ const InputField = () => {
                 setState({ field: "wheelNumber", value: `${inputValue}` });
               }}
             /> */}
+            </div>
+            <div className="spin-button">
+              <button onClick={onSpin}>GO</button>
+            </div>
           </div>
-          <div className="spin-button">
-            <button onClick={onSpin}>GO</button>
-          </div>
+        </div>
+        <div className="wheel-number-caret">
+          <Dropdown.Toggle
+            variant="secondary"
+            onClick={() => {
+              setState({
+                field: "showDetail",
+                value: !showDetail,
+              });
+            }}
+          />
         </div>
       </div>
     </>

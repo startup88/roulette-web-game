@@ -12,7 +12,7 @@ import "./index.css";
 
 const Info = () => {
   const {
-    state: { cash, winAmount, betsData, latestNumbers },
+    state: { cash, winAmount, betsData, latestNumbers, showDetail },
     setState,
   } = useHook();
 
@@ -44,18 +44,24 @@ const Info = () => {
               <RouteltteField title="WIN" unit="$" value={winAmount} />
             </div>
           </div>
-          <div className="bet-rate">
-            <div className="progress-box">
-              <RouteltteField
-                title="RED|BLACK"
-                numberInfo="2"
-                field={"color"}
-              />
+          {showDetail && (
+            <div className="bet-rate">
+              <div className="progress-box">
+                <RouteltteField
+                  title="RED|BLACK"
+                  numberInfo="2"
+                  field={"color"}
+                />
+              </div>
+              <div className="progress-box">
+                <RouteltteField
+                  title="ODD|EVEN"
+                  numberInfo="2"
+                  field={"even"}
+                />
+              </div>
             </div>
-            <div className="progress-box">
-              <RouteltteField title="ODD|EVEN" numberInfo="2" field={"even"} />
-            </div>
-          </div>
+          )}
         </Col>
         <Col md={3} sm={6}>
           <div className="latest-numbers">
@@ -67,9 +73,11 @@ const Info = () => {
               )}
             />
           </div>
-          <div className={"hot-cold-numbers"}>
-            <HotColdField />
-          </div>
+          {showDetail && (
+            <div className={"hot-cold-numbers"}>
+              <HotColdField />
+            </div>
+          )}
         </Col>
         <Col md={3} sm={6} style={{ paddingLeft: "2%" }}>
           <InputField />

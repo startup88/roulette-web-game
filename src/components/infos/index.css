@@ -8,6 +8,8 @@
   display: flex;
   justify-content: space-between;
   margin-right: 3%;
+  height: calc(0.08 * (100vh - 20px));
+  /* height: 100%; */
 }
 
 .bet-rate {
@@ -15,17 +17,22 @@
   justify-content: space-between;
   margin-right: 3%;
   margin-top: 1%;
+  height: calc(0.08 * (100vh - 20px));
 }
+
 .bet-rate .progress-box {
   width: 49.5%;
   /* margin: 1%; */
+  height: 100%;
 }
 
 div[class*="col-"] {
   padding: 0;
 }
 .latest-numbers {
+  height: calc(0.08 * (100vh - 20px));
 }
 .hot-cold-numbers {
   margin-top: 2%;
+  height: calc(0.08 * (100vh - 20px));
 }
