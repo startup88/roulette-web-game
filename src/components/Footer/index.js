@@ -43,9 +43,9 @@ const Footer = () => {
   return (
     <footer>
       <div className="actions">
-        <span data-btn="menu"> </span>
+        {/* <span data-btn="menu"> </span>
         <span data-btn="son"> </span>
-        <span data-btn="red"> </span>
+        <span data-btn="red"> </span> */}
         <span
           data-btn="amp"
           onClick={(e) => {

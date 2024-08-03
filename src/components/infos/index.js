@@ -19,67 +19,75 @@ const Info = () => {
   return (
     <>
       <Row className="info-content">
-        <Col md={6} sm={12}>
-          <div className="bet-info">
-            <div className="info-child">
-              <RouteltteField
-                title="TOTAL BET"
-                unit="$"
-                value={betsData.reduce((total, one) => total + one[2], 0)}
-              />
-            </div>
-            <div
-              className="info-child"
-              style={{ marginLeft: "1%", marginRight: "1%" }}
-            >
-              <RouteltteField
-                title="CASH"
-                unit="$"
-                value={cash}
-                onChangeCash={setState}
-                inputDisabled={false}
-              />
-            </div>
-            <div className="info-child">
-              <RouteltteField title="WIN" unit="$" value={winAmount} />
-            </div>
-          </div>
-          {showDetail && (
-            <div className="bet-rate">
-              <div className="progress-box">
+        <Col md={9} sm={12}>
+          <Row className={showDetail ? "expand-row" : "default-row"}>
+            <Col md={7}>
+              <div className="bet-info">
+                <div className="info-child">
+                  <RouteltteField
+                    title="TOTAL BET"
+                    unit="$"
+                    value={betsData.reduce((total, one) => total + one[2], 0)}
+                  />
+                </div>
+                <div
+                  className="info-child"
+                  style={{ marginLeft: "1%", marginRight: "1%" }}
+                >
+                  <RouteltteField
+                    title="CASH"
+                    unit="$"
+                    value={cash}
+                    onChangeCash={setState}
+                    inputDisabled={false}
+                  />
+                </div>
+                <div className="info-child">
+                  <RouteltteField title="WIN" unit="$" value={winAmount} />
+                </div>
+              </div>
+            </Col>
+            <Col md={5}>
+              <div className="latest-numbers">
                 <RouteltteField
-                  title="RED|BLACK"
-                  numberInfo="2"
-                  field={"color"}
+                  title="LATEST NUMBERS"
+                  numberInfo="1"
+                  numberArrays={latestNumbers.map(
+                    (item, idx) => latestNumbers[latestNumbers.length - 1 - idx]
+                  )}
                 />
               </div>
-              <div className="progress-box">
-                <RouteltteField
-                  title="ODD|EVEN"
-                  numberInfo="2"
-                  field={"even"}
-                />
-              </div>
-            </div>
-          )}
-        </Col>
-        <Col md={3} sm={6}>
-          <div className="latest-numbers">
-            <RouteltteField
-              title="LATEST NUMBERS"
-              numberInfo="1"
-              numberArrays={latestNumbers.map(
-                (item, idx) => latestNumbers[latestNumbers.length - 1 - idx]
-              )}
-            />
-          </div>
+            </Col>
+          </Row>
           {showDetail && (
-            <div className={"hot-cold-numbers"}>
-              <HotColdField />
-            </div>
+            <Row>
+              <Col md={7}>
+                <div className="bet-rate">
+                  <div className="progress-box">
+                    <RouteltteField
+                      title="RED|BLACK"
+                      numberInfo="2"
+                      field={"color"}
+                    />
+                  </div>
+                  <div className="progress-box">
+                    <RouteltteField
+                      title="ODD|EVEN"
+                      numberInfo="2"
+                      field={"even"}
+                    />
+                  </div>
+                </div>
+              </Col>
+              <Col md={5}>
+                <div className={"hot-cold-numbers"}>
+                  <HotColdField />
+                </div>
+              </Col>
+            </Row>
           )}
         </Col>
-        <Col md={3} sm={6} style={{ paddingLeft: "2%" }}>
+        <Col md={3} sm={12} style={{ paddingLeft: "1rem" }}>
           <InputField />
         </Col>
       </Row>

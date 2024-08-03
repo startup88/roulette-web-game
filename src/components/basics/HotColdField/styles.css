@@ -3,12 +3,14 @@
   background: linear-gradient(to top, #000000, #444444);
   color: white;
 
-  height: calc(0.08 * (100vh - 20px));
+  /* height: calc(0.08 * (100vh - 20px)); */
   min-height: 65px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding: 3px;
 }
 
 .hotcoldfield-title {
@@ -22,7 +24,7 @@
   justify-content: space-between;
   flex-grow: 1;
   margin-top: 2%;
-  margin-bottom: 5%;
+  margin-bottom: 10px;
 }
 .hotcoldfield-chart {
   width: 48%;

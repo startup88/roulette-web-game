@@ -38,6 +38,7 @@
 
 .info {
   font-weight: bold;
+  /* height: calc(0.08 * (100vh - 20px)); */
 }
 .value {
   /* background: linear-gradient(#040404, #1e1e1e); */

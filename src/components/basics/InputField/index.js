@@ -47,7 +47,7 @@ const InputField = () => {
         setState({ field: "wheelNumber", value: undefined });
         setState({ field: "winAmount", value: 0 });
         setState({ field: "showResult", value: false });
-      }, 2000);
+      }, 3000);
     } else {
       alert("Please input necessary data");
     }
